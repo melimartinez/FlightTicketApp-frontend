@@ -23,3 +23,4 @@ Scenario: Customer can allow multiple passengers and calculate the cost
     Given The Customer is on the booked page
     When The Customer enters in multiple users
     Then The Customer can see see the new updated cost of the flight. 
+fddfgdfgdfgdfg
