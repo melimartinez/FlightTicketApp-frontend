@@ -13,8 +13,8 @@ import { VendorhomeComponent } from './components/vendorhome/vendorhome.componen
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
-    AppComponent
+    LoginComponent,
+    AppComponent,
     VendorhomeComponent
 
   ],
