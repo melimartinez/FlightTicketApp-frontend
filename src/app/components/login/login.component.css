@@ -1,6 +1,17 @@
 label{
     text-align: right;
+    color: blueviolet;
 }
 h3{
     text-align: center;
+    color: blueviolet;
 }
+#loginButton
+{
+    color: blueviolet;
+}
+/* #completeBody{
+    
+    border: 1px solid black;
+} */
+
