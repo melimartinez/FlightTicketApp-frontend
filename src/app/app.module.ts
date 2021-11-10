@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
 import { VendorhomeComponent } from './components/vendorhome/vendorhome.component';
+import { RegisterComponent } from './components/register/register.component';
+import { VendorregisterComponent } from './components/vendorregister/vendorregister.component';
 
 
 
@@ -15,7 +17,9 @@ import { VendorhomeComponent } from './components/vendorhome/vendorhome.componen
     AppComponent,
     LoginComponent,
     AppComponent,
-    VendorhomeComponent
+    VendorhomeComponent,
+    RegisterComponent,
+    VendorregisterComponent
 
   ],
   imports: [
