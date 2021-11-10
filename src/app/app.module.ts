@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
 import { VendorhomeComponent } from './components/vendorhome/vendorhome.component';
+import { TicketComponent } from './components/ticket/ticket.component';
 
 
 
@@ -14,8 +15,8 @@ import { VendorhomeComponent } from './components/vendorhome/vendorhome.componen
   declarations: [
     AppComponent,
     LoginComponent,
-    AppComponent,
-    VendorhomeComponent
+    VendorhomeComponent,
+    TicketComponent
 
   ],
   imports: [
