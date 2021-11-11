@@ -27,7 +27,7 @@ export class VendorhomeComponent implements OnInit {
   
   // currentTime: number = 55000001;
 
-  getAllFutureFlights() { // Currently this is only getting ALL flights - not filtering them yet.
+  getAllFutureFlights() {
     this.vendorHttp.getAllFutureFlights().subscribe (
       (response) => {
         this.upcomingFlights = response;
