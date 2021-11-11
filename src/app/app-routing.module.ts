@@ -8,6 +8,8 @@ import { TicketComponent } from './components/ticket/ticket.component';
 import { RegisterComponent } from './components/register/register.component';
 import { VendorregisterComponent } from './components/vendorregister/vendorregister.component';
 
+import { CustomerLandingComponent } from './components/customerLanding/customer-landing.component';
+
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
@@ -15,7 +17,8 @@ const routes: Routes = [
   {path: 'vendorregister', component: VendorregisterComponent},
   {path: 'login/register', component: RegisterComponent},
   {path: 'login/register/login', component: LoginComponent},
-  {path: 'ticket', component: TicketComponent}
+  {path: 'ticket', component: TicketComponent},
+  {path: 'customerLanding', component: CustomerLandingComponent}
 
 ];
 
