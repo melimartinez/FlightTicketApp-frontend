@@ -35,7 +35,7 @@ export class VendorService {
   }
 
   deleteFlight(id: number): Observable<Flight> {
-    return this.http.delete<Flight>('httpL//localhost:8080/flight/${id}');
+    return this.http.delete<Flight>('http//localhost:8080/flight/${id}');
   }
 
   // editFlight(change: Flight): Observable<Flight> {
