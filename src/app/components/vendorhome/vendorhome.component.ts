@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Flight } from 'src/app/models/Flight';
-import { VendorService } from 'src/app/services/vendor.service';
+import { FlightService } from 'src/app/services/flight.service';
 
 @Component({
   selector: 'app-vendorhome',
@@ -9,7 +10,7 @@ import { VendorService } from 'src/app/services/vendor.service';
 })
 export class VendorhomeComponent implements OnInit {
 
-  constructor(private vendorHttp: VendorService) { }
+  constructor(private vendorHttp: FlightService, private router: Router) { }
 
   
   ngOnInit(): void {
@@ -27,7 +28,7 @@ export class VendorhomeComponent implements OnInit {
   
   // currentTime: number = 55000001;
 
-  getAllFutureFlights() {
+  getAllFutureFlights() { 
     this.vendorHttp.getAllFutureFlights().subscribe (
       (response) => {
         this.upcomingFlights = response;
@@ -45,10 +46,11 @@ export class VendorhomeComponent implements OnInit {
     );
   }
 
-  newFlightForm() {
-    
-  }
 
+  newFlightForm() {
+    console.log("This will reroute to a new page");
+    // this.router.navigate(['vendorflightform']);
+  }
 
 
   editFlight() {
@@ -57,8 +59,8 @@ export class VendorhomeComponent implements OnInit {
 
   deleteFlight(id: number) {
     this.vendorHttp.deleteFlight(id).subscribe (
-      (response) => {
-        console.log(response);
+      data => {
+        console.log(data)
       }
     )
   }
