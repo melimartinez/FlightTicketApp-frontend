@@ -23,12 +23,12 @@ export class FlightService {
     return this.http.get<Flight[]>('http://localhost:8080/flight');
   }
 
-  getAllFutureFlights(): Observable<Flight[]> {
-    return this.http.get<Flight[]>('http://localhost:8080/futureFlights');
+  getAllFutureFlights(id: number): Observable<Flight[]> {
+    return this.http.get<Flight[]>('http://localhost:8080/futureFlights/' + id);
   }
 
-  getAllPastFlights(): Observable<Flight[]> {
-    return this.http.get<Flight[]>('http://localhost:8080/pastFlights');
+  getAllPastFlights(id: number): Observable<Flight[]> {
+    return this.http.get<Flight[]>('http://localhost:8080/pastFlights/' +id);
   }
 
   addFlight(flight: Flight): Observable<Flight> {
@@ -36,7 +36,7 @@ export class FlightService {
   }
 
   deleteFlight(id: number): Observable<Flight> {
-    return this.http.delete<Flight>('http://localhost:8080/flight/${id}');
+    return this.http.delete<Flight>('http://localhost:8080/flight/' + id);
   }
 
   // editFlight(change: Flight): Observable<Flight> {
