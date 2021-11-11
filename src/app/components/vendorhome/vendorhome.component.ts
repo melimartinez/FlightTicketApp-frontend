@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Flight } from 'src/app/models/Flight';
+import { VendorService } from 'src/app/services/vendor.service';
 
 @Component({
   selector: 'app-vendorhome',
@@ -7,21 +9,57 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VendorhomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private vendorHttp: VendorService) { }
 
+  
   ngOnInit(): void {
+    // this.getAllFlights();
+    this.getAllFutureFlights();
   }
 
-  newFlight() {
-    console.log("new flight will be created");
+  flightList: Flight[] = [];
+  upcomingFlights: Flight[] = [];
+  pastFlights: Flight[] = [];
+  showUpcomingFlights: boolean = true;
+  showPastFlight: boolean = false;
+  showNewFlightForm: boolean = false; // still need to create newFlightForm
+  showEditFlightForm: boolean = false; // will basicallily replicate newFlightForm when its done
+  
+  // currentTime: number = 55000001;
+
+  getAllFutureFlights() { // Currently this is only getting ALL flights - not filtering them yet.
+    this.vendorHttp.getAllFutureFlights().subscribe (
+      (response) => {
+        this.upcomingFlights = response;
+      }
+    );
   }
 
-  pastFlights() {
-    console.log("veiwing past flights");
+  getAllPastFlights() {
+    this.vendorHttp.getAllPastFlights().subscribe (
+      (response) => {
+        this.pastFlights = response;
+        this.showUpcomingFlights = false;
+        this.showPastFlight = true;
+      }
+    );
   }
+
+  newFlightForm() {
+    
+  }
+
+
 
   editFlight() {
     console.log("editing Flight");
   }
 
+  deleteFlight(id: number) {
+    this.vendorHttp.deleteFlight(id).subscribe (
+      (response) => {
+        console.log(response);
+      }
+    )
+  }
 }
