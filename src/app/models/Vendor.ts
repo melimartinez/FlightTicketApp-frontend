@@ -1,6 +1,6 @@
 export class Vendor {
 
-    id: number;
+    vendor_id: number;
     companyName: string;
     vendorUsername: string;
     vendorPassword: string;
@@ -8,9 +8,9 @@ export class Vendor {
     vendorEmail: string;
     vendorSlogan: string;
 
-    constructor(companyName: string = "", vendorUsername: string = "", vendorPassword: string = "", vendorPhoneNumber: number, vendorEmail: string, vendorSlogan: string, id?: number) {
+    constructor(vendor_id: number, companyName: string = "", vendorUsername: string = "", vendorPassword: string = "", vendorPhoneNumber: number, vendorEmail: string, vendorSlogan: string) {
 
-        this.id = id;
+        this.vendor_id = vendor_id;
         this.companyName = companyName;
         this.vendorUsername = vendorUsername;
         this.vendorPassword = vendorPassword;
