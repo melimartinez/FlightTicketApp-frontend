@@ -7,6 +7,7 @@ import { TicketComponent } from './components/ticket/ticket.component';
 
 import { RegisterComponent } from './components/register/register.component';
 import { VendorregisterComponent } from './components/vendorregister/vendorregister.component';
+import { VendorhomeComponent } from './components/vendorhome/vendorhome.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'vendorregister', component: VendorregisterComponent},
   {path: 'login/register', component: RegisterComponent},
   {path: 'login/register/login', component: LoginComponent},
+  {path: 'vendorHome', component: VendorhomeComponent},
   {path: 'ticket', component: TicketComponent}
 
 ];

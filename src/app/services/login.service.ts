@@ -15,6 +15,7 @@ export class LoginService {
   vendorList: Vendor[];
   currentcustomer: Customer;
   currentVendor: Vendor;
+  statusOfUser: string;
   loginsucceed: boolean = false;
   custlength: number = 0;
   vendLength: number;
@@ -35,6 +36,7 @@ export class LoginService {
             this.currentcustomer = this.customerList[i];
             localStorage.setItem('currentCustomer', JSON.stringify(this.currentcustomer));
             this.loginsucceed = true;
+            this.statusOfUser = 'Customer';
     
           }
     
@@ -55,6 +57,7 @@ export class LoginService {
             this.currentVendor = this.vendorList[i];
             localStorage.setItem('currentVendor', JSON.stringify(this.currentVendor));
             this.loginsucceed = true;
+            this.statusOfUser = 'Vendor';
           }
         }
       
