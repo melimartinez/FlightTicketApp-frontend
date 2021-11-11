@@ -5,8 +5,8 @@ export class Customer {
     lastname: string;
     dob: string;
     email: string;
-    usernameRegistration: string;
-    passwordRegistration: string;
+    cPassword: string;
+    cUsername: string;
     address: string;
     address2: string;
     city: string;
@@ -19,8 +19,8 @@ export class Customer {
         this.lastname = lastname;
         this.dob = dob;
         this.email = email;
-        this.usernameRegistration = usernameRegistration;
-        this.passwordRegistration = passwordRegistration;
+        this.cUsername = usernameRegistration;
+        this.cPassword = passwordRegistration;
         this.address = address;
         this.address2 = address2;
         this.city = city;
