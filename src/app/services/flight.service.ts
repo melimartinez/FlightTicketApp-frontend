@@ -1,3 +1,4 @@
+
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -7,7 +8,7 @@ import { Flight } from '../models/Flight';
 @Injectable({
   providedIn: 'root'
 })
-export class VendorService {
+export class FlightService {
 
   constructor(private http: HttpClient) { }
 
@@ -35,7 +36,7 @@ export class VendorService {
   }
 
   deleteFlight(id: number): Observable<Flight> {
-    return this.http.delete<Flight>('http//localhost:8080/flight/${id}');
+    return this.http.delete<Flight>('http://localhost:8080/flight/${id}');
   }
 
   // editFlight(change: Flight): Observable<Flight> {

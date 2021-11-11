@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
 
 @Component({
@@ -9,14 +9,14 @@ import { LoginService } from 'src/app/services/login.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private loginServ: LoginService) { }
+  constructor(private loginServ: LoginService, private router: Router) { }
 
   ngOnInit(): void {
     
   }
   username: string;
   password: string;
-  failedLogin: string = "Invalid Login";
+  failedLogin: string;
   failed: boolean = false;
 
   async login(){
@@ -26,8 +26,14 @@ export class LoginComponent implements OnInit {
     console.log(localStorage.getItem('currentVendor'));
     localStorage.removeItem('currentCustomer');
 
-    if (!this.loginServ.loginsucceed){
-      this.failed = true;
+    if (this.loginServ.statusOfUser === 'Customer'){
+
+      this.router.navigate(['ticket']);
+
+    }else if (this.loginServ.statusOfUser === 'Vendor'){
+      this.router.navigate(['vendorHome'])
+    }else{
+      this.failedLogin = "Invalid Login";
     }
 
   }
