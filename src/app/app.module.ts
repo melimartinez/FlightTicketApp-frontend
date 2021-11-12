@@ -19,6 +19,8 @@ import { VendorregisterComponent } from './components/vendorregister/vendorregis
 import { RegisterService } from './services/register.service';
 import { CustomerLandingComponent } from './components/customerLanding/customer-landing.component';
 import { VendorCreateFlightsComponent } from './components/vendor-create-flights/vendor-create-flights.component';
+import { VendorflightviewComponent } from './components/vendorflightview/vendorflightview.component';
+
 
 
 
@@ -35,7 +37,9 @@ import { VendorCreateFlightsComponent } from './components/vendor-create-flights
     TicketComponent,
     CustomerLandingComponent,
     CustomerHomeComponent,
-    VendorCreateFlightsComponent
+    VendorCreateFlightsComponent,
+    VendorflightviewComponent
+
 
   ],
   imports: [
