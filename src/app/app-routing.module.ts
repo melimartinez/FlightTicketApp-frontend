@@ -20,13 +20,9 @@ const routes: Routes = [
   {path: 'ticket/:id', component: TicketComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'vendorregister', component: VendorregisterComponent},
-  {path: 'login/register', component: RegisterComponent},
   {path: 'login/register/login', component: LoginComponent},
-  {path: 'customer-home', component: CustomerHomeComponent},
-  {path: 'ticket', component: TicketComponent},
   {path: 'customerHome', component: CustomerHomeComponent},
   {path: 'vendorHome', component: VendorhomeComponent},
-  {path: 'ticket', component: TicketComponent},
   {path: 'vendorflightview', component: VendorflightviewComponent},
   {path: 'logout', component: LogoutComponent},
   {path:'vendorcreateflight', component: VendorCreateFlightsComponent}
