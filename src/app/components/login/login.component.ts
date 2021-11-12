@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
 
     if (this.loginServ.statusOfUser === 'Customer'){
 
-      this.router.navigate(['ticket']);
+      this.router.navigate(['customerHome']);
 
     }else if (this.loginServ.statusOfUser === 'Vendor'){
       this.router.navigate(['vendorHome'])
