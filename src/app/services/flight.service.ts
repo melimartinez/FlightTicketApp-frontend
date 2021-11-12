@@ -16,7 +16,7 @@ export class FlightService {
   // private putHeaders = new HttpHeaders({ 'Context-Type': 'application/json' })
 
   getFlightById(id: number): Observable<Flight> {
-    return this.http.get<Flight>('http://localhost:8080/flight/${id}');
+    return this.http.get<Flight>('http://localhost:8080/flight/' + id);
   }
 
   getAllFlights(): Observable<Flight[]> {
@@ -43,7 +43,7 @@ export class FlightService {
     return this.http.post<any[]>(`http://localhost:8080/flight/findFlights`, findflight)
   }
 
-  // editFlight(change: Flight): Observable<Flight> {
-  //   return this.http. ;
-  // }
+  editFlight(change: Flight, id: number): Observable<Flight> {
+    return this.http.put<Flight>('http://localhost:8080/flight/' + id , change, { headers: this.postHeaders })
+  }
 }
