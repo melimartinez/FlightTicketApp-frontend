@@ -18,6 +18,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { VendorregisterComponent } from './components/vendorregister/vendorregister.component';
 import { RegisterService } from './services/register.service';
 import { CustomerLandingComponent } from './components/customerLanding/customer-landing.component';
+import { VendorCreateFlightsComponent } from './components/vendor-create-flights/vendor-create-flights.component';
 
 
 
@@ -33,7 +34,8 @@ import { CustomerLandingComponent } from './components/customerLanding/customer-
     VendorhomeComponent,
     TicketComponent,
     CustomerLandingComponent,
-    CustomerHomeComponent
+    CustomerHomeComponent,
+    VendorCreateFlightsComponent
 
   ],
   imports: [

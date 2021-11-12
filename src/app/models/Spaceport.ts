@@ -1,16 +1,11 @@
+export class Spaceport{
+    id: number;
+    spName: String;
+    planet: String;
 
-export class Spaceport {
-
-    sp_id: number;
-    spName: string;
-    planet: string;
-
-    constructor(sp_id:number, spName:string = "", planet:string = "") {
-
-        this.sp_id = sp_id;
+    constructor(id: number, spName: String, planet: String){
+        this.id = id;
         this.spName = spName;
         this.planet = planet;
-
-    }
-
+        }
 }

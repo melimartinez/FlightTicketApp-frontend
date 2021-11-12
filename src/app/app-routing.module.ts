@@ -10,6 +10,7 @@ import { TicketComponent } from './components/ticket/ticket.component';
 import { VendorhomeComponent } from './components/vendorhome/vendorhome.component';
 
 import { CustomerHomeComponent } from './components/customer-home/customer-home.component';
+import { VendorCreateFlightsComponent } from './components/vendor-create-flights/vendor-create-flights.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
