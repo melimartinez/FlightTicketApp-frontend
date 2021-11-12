@@ -1,0 +1,33 @@
+
+<div *ngIf="isShow">
+<p></p>
+<h3>Your Filtered Flights</h3>
+    <hr>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+        </div>
+        <div class="panel-body">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th *ngFor="let i of headers">{{i}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of childData[0]">  
+                        <td>{{data.id}}</td>
+                        <td>{{data.departureDateTime}}</td>
+                        <td>{{data.arrivalDateTime}}</td>
+                        <td>{{data.departureSpaceport.spName}}</td>
+                        <td>{{data.arrivalSpaceport.spName}}</td>
+                        <td>{{data.vendor.companyName}}</td>
+                        <td>{{data.ticketsAvailable}}</td>
+                        <td>{{data.pricePerTicket}}</td>  
+                        <td><button class="btn btn-danger"(click)="goToTicket(data.id)">Book</button></td> 
+                        </tr>  
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
