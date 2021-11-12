@@ -8,6 +8,7 @@ import { VendorregisterComponent } from './components/vendorregister/vendorregis
 import { TicketComponent } from './components/ticket/ticket.component';
 
 import { VendorhomeComponent } from './components/vendorhome/vendorhome.component';
+import { VendorflightviewComponent } from './components/vendorflightview/vendorflightview.component';
 
 import { CustomerHomeComponent } from './components/customer-home/customer-home.component';
 import { VendorCreateFlightsComponent } from './components/vendor-create-flights/vendor-create-flights.component';
@@ -24,7 +25,9 @@ const routes: Routes = [
   {path: 'ticket', component: TicketComponent},
   {path: 'customerHome', component: CustomerHomeComponent},
   {path: 'vendorHome', component: VendorhomeComponent},
-  {path: 'ticket', component: TicketComponent}
+  {path: 'ticket', component: TicketComponent},
+  {path: 'vendorflightview', component: VendorflightviewComponent}
+
 ];
 
 @NgModule({
