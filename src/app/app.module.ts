@@ -7,28 +7,26 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
 import { VendorhomeComponent } from './components/vendorhome/vendorhome.component';
-<<<<<<< HEAD
 import { TicketComponent } from './components/ticket/ticket.component';
-=======
+import { CustomerHomeComponent } from './components/customer-home/customer-home.component';
 import { RegisterComponent } from './components/register/register.component';
 import { VendorregisterComponent } from './components/vendorregister/vendorregister.component';
->>>>>>> b270a51569bb7a7f3564645c83ff592bb1a93658
-
+import { FlightListComponent } from './flight-list/flight-list.component';
+import { ChildFindFlightsComponent } from './child-find-flights/child-find-flights.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-<<<<<<< HEAD
     VendorhomeComponent,
-    TicketComponent
-=======
-    AppComponent,
+    TicketComponent,
+    CustomerHomeComponent,
     VendorhomeComponent,
     RegisterComponent,
-    VendorregisterComponent
->>>>>>> b270a51569bb7a7f3564645c83ff592bb1a93658
+    VendorregisterComponent,
+    FlightListComponent,
+    ChildFindFlightsComponent
 
   ],
   imports: [
