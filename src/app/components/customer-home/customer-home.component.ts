@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
+
 import { FindFlights } from 'src/app/models/FindFlights';
 import { FlightService } from 'src/app/services/flightS.service';
 import { Observable } from 'rxjs';
 import { Flight } from 'src/app/models/Flight';
 import { Data } from '@angular/router';
 import { ActivatedRoute, Router } from '@angular/router';
-=======
 
 import { Router } from '@angular/router';
->>>>>>> 9a940a03b9f477512b6efd8ec7715659e6dc5736
+
 
 @Component({
   selector: 'app-customer-home',
@@ -18,7 +17,6 @@ import { Router } from '@angular/router';
 })
 export class CustomerHomeComponent implements OnInit {
 
-<<<<<<< HEAD
   id:number;
   isShow = false;
   isShowAll = true;
@@ -61,11 +59,10 @@ export class CustomerHomeComponent implements OnInit {
   goToTicket(id:number){
     this.router.navigate(['ticket', id])
   }
-=======
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
->>>>>>> 9a940a03b9f477512b6efd8ec7715659e6dc5736
-}
+
