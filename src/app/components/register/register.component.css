@@ -20,3 +20,19 @@
     position: relative;
     right: 4em;
 }
+
+.form-label-address {
+    display: inline;
+    position: relative;
+    right: 2.25em;
+}
+
+.input-form-address {
+    display: inline;
+    width: 56%;
+}
+
+.form-right-address {
+    position: relative;
+    left: 2.2em;
+}
