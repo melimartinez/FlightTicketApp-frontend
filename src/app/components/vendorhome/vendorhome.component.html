@@ -1,11 +1,18 @@
 <div id="homeBanner">
     <h1 style="border: solid">Vendor Home page Banner here(insert Image)</h1>
-    <h2>Welcome "VendorName"</h2>
+    <h2>Welcome {{currentVendor.companyName}}</h2>
 </div>
 
 <div id="navigationContainer" style="border: solid;">
-    <button type="button" routerLink = "vendorflightform" routerLinkActive="active">Create New Flight</button><br>
-    <button type="button" (click)="getAllPastFlights()">View Past Flights</button><br>
+    <button type="button" (click)="newFlightForm()">Create New Flight</button><br>
+
+    <div *ngIf="showUpcomingFlights; else showUpcomingButton">
+        <button type="button" (click)="getAllPastFlights()">View Past Flights</button><br>
+    </div>
+
+    <ng-template #showUpcomingButton>
+        <button type="button" (click)="ngOnInit()">View Upcoming Flights</button><br>
+    </ng-template>
 </div>
 
 <div id="flightsContainer" style="border: solid;">

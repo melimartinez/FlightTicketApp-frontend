@@ -12,13 +12,14 @@
 <div class="form-group row mb-3">
     <label for="vendorUsernameInput" class="col-sm-3 col-form-label">Username</label>
     <div class="col-sm-6">
-        <input type="text" class="form-control" id="lastNameInput" placeholder="Username" [(ngModel)] = "vendorUsername">
+        <input type="text" class="form-control" id="lastNameInput" placeholder="Username" maxlength="7" [(ngModel)] = "vendorUsername">
+        <span style = "color: red;" *ngIf="showError">{{holder}}, this username is already in use</span>
         <br>
     </div>
 <div class="form-group row">
     <label for="vendorPasswordInput" class="col-sm-3 col-form-label">Password</label>
     <div class="col-sm-6">
-        <input type="password" class="form-control" id="vendorPasswordInput" placeholder="Password" [(ngModel)] = "vendorPassword">
+        <input type="password" class="form-control" id="vendorPasswordInput" placeholder="Password" maxlength="7" [(ngModel)] = "vendorPassword">
         <br>
     </div>
 </div>
@@ -33,6 +34,13 @@
     <label for="vendorPhoneInput" class="col-sm-3 col-form-label">Phone Number</label>
     <div class="col-sm-6">
         <input type="number" class="form-control" id="vendorPhoneInput" placeholder="Phonenumber" [(ngModel)] = "vendorPhoneNumber">
+        <br>
+    </div>
+</div>
+<div class="form-group row">
+    <label for="slogan" class="col-sm-3 col-form-label">Slogan</label>
+    <div class="col-sm-6">
+        <input type="text" class="form-control" id="slogan" placeholder="Slogan" [(ngModel)] = "slogan">
         <br>
     </div>
 </div>
