@@ -15,7 +15,7 @@ export class LoginService {
   vendorList: Vendor[];
   currentcustomer: Customer;
   currentVendor: Vendor;
-  statusOfUser: string;
+  statusOfUser: string = '';
   loginsucceed: boolean = false;
   custlength: number = 0;
   vendLength: number;
