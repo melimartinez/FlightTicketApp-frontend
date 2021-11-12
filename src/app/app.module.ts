@@ -20,6 +20,7 @@ import { RegisterService } from './services/register.service';
 import { CustomerLandingComponent } from './components/customerLanding/customer-landing.component';
 import { VendorCreateFlightsComponent } from './components/vendor-create-flights/vendor-create-flights.component';
 import { VendorflightviewComponent } from './components/vendorflightview/vendorflightview.component';
+import { LogoutComponent } from './components/logout/logout.component';
 
 
 
@@ -38,7 +39,8 @@ import { VendorflightviewComponent } from './components/vendorflightview/vendorf
     CustomerLandingComponent,
     CustomerHomeComponent,
     VendorCreateFlightsComponent,
-    VendorflightviewComponent
+    VendorflightviewComponent,
+    LogoutComponent
 
 
   ],
