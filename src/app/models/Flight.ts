@@ -1,4 +1,6 @@
 import { Vendor } from "./Vendor";
+import { Spaceport } from './Spaceport';
+import { Spaceship } from './Spaceship';
 
 export class Flight {
     id: number;
@@ -8,12 +10,12 @@ export class Flight {
     vendorCost: number;
     ticketsAvailable: number;
     status: String;
-    departureSpaceport: Object;// number for now but might need to change to type'Spaceport' if possible
-    arrivalSpaceport: Object;
+    departureSpaceport: Spaceport;// number for now but might need to change to type'Spaceport' if possible
+    arrivalSpaceport: Spaceport;
     vendor: Vendor;
-    spaceship: Object;
+    spaceship: Spaceship;
 
-    constructor(id: number, departureDateTime: number, arrivalDateTime: number, pricePerTicket: number, vendorCost: number, ticketsAvailable: number, status: String, departureSpaceport: Object, arrivalSpaceport: Object, vendor: Vendor, spaceship: Object) {
+    constructor(id: number, departureDateTime: number, arrivalDateTime: number, pricePerTicket: number, vendorCost: number, ticketsAvailable: number, status: String, departureSpaceport: Spaceport, arrivalSpaceport: Spaceport, vendor: Vendor, spaceship: Spaceship) {
         this.id = id;
         this.departureDateTime = departureDateTime;
         this.arrivalDateTime = arrivalDateTime;

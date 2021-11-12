@@ -18,11 +18,10 @@ div {
     padding-bottom: 42.4em;
     float: left;
 
-    /*
+        /*
     background-color: #436da3
     */
 }
-
 
 canvas {
     display: block;
@@ -30,7 +29,7 @@ canvas {
   }
 
 .canvas {
-    
+
 }
 
 .galaxy {
