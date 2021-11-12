@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Flight } from 'src/app/models/Flight';
 import { Vendor } from 'src/app/models/Vendor';
@@ -15,6 +15,7 @@ export class VendorhomeComponent implements OnInit {
 
   
   ngOnInit(): void {
+    // this.getAllFlights();
     this.getAllFutureFlights();
   }
 
@@ -25,12 +26,13 @@ export class VendorhomeComponent implements OnInit {
   showPastFlight: boolean = false;
   showNewFlightForm: boolean = false; // still need to create newFlightForm
   showEditFlightForm: boolean = false; // will basicallily replicate newFlightForm when its done
-  currentVendor: Vendor = JSON.parse(localStorage.getItem('currentVendor')); 
+  currentVendor: Vendor = JSON.parse(localStorage.getItem('currentVendor')); // 
+  flightId: number = 0;
 
   
 
   getAllFutureFlights() {  //Gets all future flights for this particular vendor
-    console.log( this.currentVendor.vendor_id)
+    // console.log( this.currentVendor.vendor_id)
     this.vendorHttp.getAllFutureFlights(this.currentVendor.vendor_id).subscribe (
       (response) => {
         this.upcomingFlights = response;
@@ -56,15 +58,15 @@ export class VendorhomeComponent implements OnInit {
     // this.router.navigate(['vendorflightform']);
   }
 
-  editFlight() {
-    console.log("editing Flight");
-    //this.router.navigate(['vendorflightform'])
+  viewFlight(id: number) {
+    console.log(id);
+    this.router.navigate(['vendorflightview'])
   }
 
   deleteFlight(id: number) {
     this.vendorHttp.deleteFlight(id).subscribe (
       (data) => {
-        this.getAllFutureFlights(); // to show updated table
+        this.getAllFutureFlights();
         console.log(data)
       }
     )
