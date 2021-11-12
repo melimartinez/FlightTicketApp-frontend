@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RegisterService } from '../../services/register.service';
 import { Customer } from 'src/app/models/Customer';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -10,7 +11,7 @@ import { Customer } from 'src/app/models/Customer';
 export class RegisterComponent implements OnInit {
   customerList: any;
 
-  constructor(private customerHttp: RegisterService) { }
+  constructor(private customerHttp: RegisterService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -64,6 +65,8 @@ export class RegisterComponent implements OnInit {
       let c: Customer = new Customer(0, this.firstname, this.lastname, this.dob, this.email, this.usernameRegistration, this.passwordRegistration, this.address, this.address2, this.city, this.state, this.zipcode, this.phoneNumber);
       this.customerHttp.addCustomer(c).subscribe((response) => {
       console.log (response);
+      this.router.navigate(['login']);
+
     })  
   }
 

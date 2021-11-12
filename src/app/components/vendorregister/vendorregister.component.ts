@@ -2,6 +2,7 @@ import { Component, OnInit, InjectionToken } from '@angular/core';
 import { RegisterService } from 'src/app/services/register.service';
 import { Validator } from '@angular/forms';
 import { Vendor } from 'src/app/models/Vendor';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-vendorregister',
@@ -10,7 +11,7 @@ import { Vendor } from 'src/app/models/Vendor';
 })
 export class VendorregisterComponent implements OnInit {
 
-  constructor(private vendorHttp: RegisterService) { }
+  constructor(private vendorHttp: RegisterService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -61,8 +62,10 @@ export class VendorregisterComponent implements OnInit {
       let v: Vendor = new Vendor(0, this.companyName, this.vendorUsername, this.vendorPassword, this.vendorEmail, this.vendorPhoneNumber, this.slogan);
       this.vendorHttp.addVendor(v).subscribe((response) => {
       console.log (response);
-      })   
+      
 
+      })   
+      this.router.navigate(['login']);
+    }
   }
-}
 }
