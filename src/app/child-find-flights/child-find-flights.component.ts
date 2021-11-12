@@ -11,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ChildFindFlightsComponent implements OnInit {
 
   id:number;
-  headers = ["Flight No.","Departure Date","Arrival Date","Departure Spaceport","Arrival Spaceport","Airline","Seats Available", "Price Per Ticket"]
+  headers = ["Flight No.","Departure Date","Arrival Date","Departure Spaceport","Arrival Spaceport","Airline","Seats Available", "Price Per Ticket", "Actions"]
 
    @Input() childData: any;
    @Input() isShow: boolean;
