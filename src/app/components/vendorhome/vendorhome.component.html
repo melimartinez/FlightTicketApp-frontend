@@ -36,12 +36,12 @@
                     <td >{{flight.id}}</td>
                     <td>{{flight.departureDateTime}}</td>
                     <td>{{flight.arrivalDateTime}}</td>
-                    <td>{{flight.spaceship}}</td>
-                    <td>{{flight.departureSpaceport}}</td>
-                    <td>{{flight.arrivalSpaceport}}</td>
+                    <td>{{flight.spaceship.ssName}}</td>
+                    <td>{{flight.departureSpaceport.spName}}</td>
+                    <td>{{flight.arrivalSpaceport.spName}}</td>
                     <td>{{flight.status}}</td>
                     <button type="button" (click)="viewFlight(flight.id)">View Flight</button>
-                    <button type="button" (click)="deleteFlight(flight.id)">Delete Flight</button><br>
+                    <!-- <button type="button" (click)="deleteFlight(flight.id)">Delete Flight</button><br> -->
                 </tr>
             </tbody>
         </table>
@@ -66,9 +66,9 @@
                     <td>{{flight.id}}</td>
                     <td>{{flight.departureDateTime}}</td>
                     <td>{{flight.arrivalDateTime}}</td>
-                    <td>{{flight.spaceship}}</td>
-                    <td>{{flight.departureSpaceport}}</td>
-                    <td>{{flight.arrivalSpaceport}}</td>
+                    <td>{{flight.spaceship.ssName}}</td>
+                    <td>{{flight.departureSpaceport.spName}}</td>
+                    <td>{{flight.arrivalSpaceport.spName}}</td>
                     <td>{{flight.status}}</td>
                 </tr>
             </tbody>
