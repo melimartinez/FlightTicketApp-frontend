@@ -23,7 +23,7 @@ export class CustomerHomeComponent implements OnInit {
   flights: Observable<Flight[]>;
 
   constructor(private flightService: FlightService, private route: ActivatedRoute, private router: Router) { }
-  headers = ["Flight No.","Departure Date","Arrival Date","Departure Spaceport","Arrival Spaceport","Airline","Seats Available", "Price Per Ticket"]
+  headers = ["Flight No.","Departure Date","Arrival Date","Departure Spaceport","Arrival Spaceport","Airline","Seats Available", "Price Per Ticket", "Actions"]
   allFlights: any;
   data: any;
   parentData: any[]=[];
@@ -58,5 +58,4 @@ export class CustomerHomeComponent implements OnInit {
     this.router.navigate(['ticket', id])
   }
 }
-
 
