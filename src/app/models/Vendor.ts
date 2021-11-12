@@ -1,18 +1,23 @@
 export class Vendor {
 
-    id: number;
+    vendor_id: number;
     companyName: string;
     vendorUsername: string;
     vendorPassword: string;
-    vendorPhoneNumber: number;
+    email: string;
+    phoneNumber: number;
+    slogan: string;
 
-    constructor(companyName: string = "", vendorUsername: string = "", vendorPassword: string = "", vendorPhoneNumber: number, id?: number) {
 
-        this.id = id;
+    constructor(id: number, companyName: string = "", vendorUsername: string = "", vendorPassword: string = "", email: string = "", phoneNumber: number, slogan: string = "") {
+
+        this.vendor_id = id;
         this.companyName = companyName;
         this.vendorUsername = vendorUsername;
         this.vendorPassword = vendorPassword;
-        this.vendorPhoneNumber = vendorPhoneNumber; 
+        this.email = email;
+        this.phoneNumber = phoneNumber; 
+        this.slogan = slogan;
 
     }
 

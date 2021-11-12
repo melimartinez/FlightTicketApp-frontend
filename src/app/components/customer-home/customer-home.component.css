@@ -1,0 +1,12 @@
+.form-location {
+    display: inline;
+    width: 25%;
+}
+
+.form-label {
+    margin: 25px 25px
+}
+
+.form-right {
+    margin-left: 50px;
+}

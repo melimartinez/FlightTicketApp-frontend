@@ -1,16 +1,77 @@
 <div id="homeBanner">
     <h1 style="border: solid">Vendor Home page Banner here(insert Image)</h1>
-    <h2>Welcome "VendorName"</h2>
-</div> 
-
-<div id="navigationContainer" style="border: solid;">
-    <button type="button" (click)="newFlight()">Create New Flight</button>
-    <button type="button" (click)="pastFlights()">View Past Flights</button>
-    <button type="button" (click)="editFlight()">Edit Flight(this will be next to each flight)</button>
+    <h2>Welcome {{currentVendor.companyName}}</h2>
 </div>
 
+<div id="navigationContainer" style="border: solid;">
+    <button type="button" (click)="newFlightForm()">Create New Flight</button><br>
 
+    <div *ngIf="showUpcomingFlights; else showUpcomingButton">
+        <button type="button" (click)="getAllPastFlights()">View Past Flights</button><br>
+    </div>
 
-<div id="upcomingFlightsContainer">
-    <h3>Insert tables here</h3>
-</div> 
+    <ng-template #showUpcomingButton>
+        <button type="button" (click)="ngOnInit()">View Upcoming Flights</button><br>
+    </ng-template>
+</div>
+
+<div id="flightsContainer" style="border: solid;">
+    <div *ngIf="showUpcomingFlights; else showPastFlights">
+        <h3>Upcoming Flights:</h3>
+        <table id="FlightsTable">
+            <thead class="tableHead">
+                <tr>
+                    <th>Flight Number(ID)</th>
+                    <th>Departure Time</th>
+                    <th>Arrival Time</th>
+                    <th>Spaceship</th>
+                    <th>Departure Spaceport</th>
+                    <th>Arrival Spaceport</th>
+                    <th>Status</th>
+                    <th>Options</th>
+                </tr>
+            </thead>
+            <tbody id="vendorTableBody">
+                <tr *ngFor="let flight of upcomingFlights">
+                    <td>{{flight.id}}</td>
+                    <td>{{flight.departureDateTime}}</td>
+                    <td>{{flight.arrivalDateTime}}</td>
+                    <td>{{flight.spaceship}}</td>
+                    <td>{{flight.departureSpaceport}}</td>
+                    <td>{{flight.arrivalSpaceport}}</td>
+                    <td>{{flight.status}}</td>
+                    <button type="button" (click)="editFlight()">Edit Flight</button>
+                    <button type="button" (click)="deleteFlight(flight.id)">Delete Flight</button><br>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <ng-template #showPastFlights>
+        <h3>Past Flights:</h3>
+        <table id="FlightsTable">
+            <thead class="tableHead">
+                <tr>
+                    <th>Flight Number(ID)</th>
+                    <th>Departure Time</th>
+                    <th>Arrival Time</th>
+                    <th>Spaceship</th> 
+                    <th>Departure Spaceport</th>
+                    <th>Arrival Spaceport</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="vendorTableBody">
+                <tr *ngFor="let flight of pastFlights">
+                    <td>{{flight.id}}</td>
+                    <td>{{flight.departureDateTime}}</td>
+                    <td>{{flight.arrivalDateTime}}</td>
+                    <td>{{flight.spaceship}}</td>
+                    <td>{{flight.departureSpaceport}}</td>
+                    <td>{{flight.arrivalSpaceport}}</td>
+                    <td>{{flight.status}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </ng-template>
+</div>

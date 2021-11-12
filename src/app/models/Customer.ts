@@ -1,30 +1,32 @@
 export class Customer {
 
-    id: number;
-    firstname: string;
-    lastname: string;
+    c_id: number;
+    firstName: string;
+    lastName: string;
     dob: string;
     email: string;
-    usernameRegistration: string;
-    passwordRegistration: string;
-    address: string;
-    address2: string;
+    cUsername: string;
+    cPassword: string;
+    addressLine1: string;
+    addressLine2: string;
     city: string;
     state: string;
     zipcode: number;
+    phoneNumber: number
 
-    constructor(firstname: string = "", lastname: string = "", dob: string = "", email: string = "", usernameRegistration: string = "", passwordRegistration: string = "", address: string = "", address2: string = "", city: string = "", state: string = "", zipcode: number, id?: number) {
-        this.id = id;
-        this.firstname = firstname;
-        this.lastname = lastname;
+    constructor(id: number, firstname: string = "", lastname: string = "", dob: string = "", email: string = "", usernameRegistration: string = "", passwordRegistration: string = "", address: string = "", address2: string = "", city: string = "", state: string = "", zipcode: number, phoneNumber: number) {
+        this.c_id = id;
+        this.firstName = firstname;
+        this.lastName = lastname;
         this.dob = dob;
         this.email = email;
-        this.usernameRegistration = usernameRegistration;
-        this.passwordRegistration = passwordRegistration;
-        this.address = address;
-        this.address2 = address2;
+        this.cUsername = usernameRegistration;
+        this.cPassword = passwordRegistration;
+        this.addressLine1 = address;
+        this.addressLine2 = address2;
         this.city = city;
         this.state = state;
         this.zipcode = zipcode;
+        this.phoneNumber = phoneNumber;
     }
 }
