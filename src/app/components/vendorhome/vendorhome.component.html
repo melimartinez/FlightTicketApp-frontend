@@ -1,6 +1,6 @@
 <div id="homeBanner">
-    <h1 style="border: solid">Vendor Home page Banner here(insert Image)</h1>
-    <h2>Welcome {{currentVendor.companyName}}</h2>
+    <!-- <h1 style="border: solid">Vendor Home page Banner here(insert Image)</h1> -->
+    <h2>{{currentVendor.companyName}}</h2>
 </div>
 
 <div id="navigationContainer" style="border: solid;">
@@ -33,14 +33,14 @@
             </thead>
             <tbody id="vendorTableBody">
                 <tr *ngFor="let flight of upcomingFlights">
-                    <td>{{flight.id}}</td>
+                    <td >{{flight.id}}</td>
                     <td>{{flight.departureDateTime}}</td>
                     <td>{{flight.arrivalDateTime}}</td>
                     <td>{{flight.spaceship}}</td>
                     <td>{{flight.departureSpaceport}}</td>
                     <td>{{flight.arrivalSpaceport}}</td>
                     <td>{{flight.status}}</td>
-                    <button type="button" (click)="editFlight()">Edit Flight</button>
+                    <button type="button" (click)="viewFlight(flight.id)">View Flight</button>
                     <button type="button" (click)="deleteFlight(flight.id)">Delete Flight</button><br>
                 </tr>
             </tbody>
