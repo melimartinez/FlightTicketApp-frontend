@@ -1,14 +1,13 @@
 <div>
-<h1>Welcome to {{title}}</h1>
 
+    <h1>{{title}}</h1>
 
-<p routerLink = "login">Login</p>
-<p routerLink = "register">Register</p>
-<p routerLink = "vendorregister">Vendor Register</p>
-
-
-
-
+<ul id="navList">
+    <li routerLink = "customerHome">Home</li>
+    <li routerLink = "login">Login</li>
+    <li routerLink = "register">Customer Register</li>
+    <li routerLink = "vendorregister">Vendor Register</li>
+</ul>
 
 
 <router-outlet></router-outlet>
