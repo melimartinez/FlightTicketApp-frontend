@@ -7,8 +7,6 @@ import { Flight } from 'src/app/models/Flight';
 import { Data } from '@angular/router';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { Router } from '@angular/router';
-
 
 @Component({
   selector: 'app-customer-home',
@@ -59,10 +57,6 @@ export class CustomerHomeComponent implements OnInit {
   goToTicket(id:number){
     this.router.navigate(['ticket', id])
   }
-
-  constructor(private router: Router) { }
-
-  ngOnInit(): void {
-  }
+}
 
 
