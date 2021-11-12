@@ -1,14 +1,16 @@
 label{
     text-align: right;
-    color: blueviolet;
+    color: #bccfe7;
 }
-h3{
-    text-align: center;
-    color: blueviolet;
-}
+
 #loginButton
 {
-    color: blueviolet;
+    margin: auto auto;
+    font-size: 1.5em;
+    color: black;
+    background-color: #d1c156;
+    height: 2.5em;
+    width: 6.75em;
 }
 /* #completeBody{
     
@@ -18,3 +20,21 @@ p{
     text-align: center;
     color: red;
 }
+
+#loginButton:hover {
+    background-color: #86c7ba;
+    border: none;
+}
+
+.greeting-header {
+    padding: 25px 25px;
+    
+    text-align: center;
+    color: #bccfe7;
+}
+
+.label-color {
+    color: black;
+}
+
+

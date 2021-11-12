@@ -1,36 +1,55 @@
 
 
-<form #loginForm="ngForm" (ngSubmit)="search()">
+<form #loginForm="ngForm" (ngSubmit)="search()" class="jumbotron">
   <!-- <small class="text-danger">{{msg}}</small> -->
 
   <div class="form-group">
 
-    <label for="departureSpaceport" class="form-label">Departure Spaceport:</label>
-    <input type="text" class="form-control form-location" id="departureSpaceport"
+    <div class="form-labels">
+
+      <label for="departureSpaceport" class="form-label form-left">Departure Spaceport:</label>
+
+      <label for="arrivalSpaceport" class="form-label">Arrival Spaceport:</label>
+
+    </div>
+
+    <div class="form-inputs">
+
+      <input type="text" class="form-control form-location" id="departureSpaceport"
       [(ngModel)]="findFlights.departureSpaceport" name="departureSpaceport" required #departureSpaceport="ngModel"
       [class.is.invalid]="departureSpaceport.invalid && departureSpaceport.touched">
 
-    <label for="arrivalSpaceport" class="form-label">Arrival Spaceport:</label>
-    <input type="text" class="form-control form-location" id="arrivalSpaceport"
+      <input type="text" class="form-control form-location form-right" id="arrivalSpaceport"
       [(ngModel)]="findFlights.arrivalSpaceport" name="arrivalSpaceport" required #arrivalSpaceport="ngModel"
       [class.is.invalid]="arrivalSpaceport.invalid && arrivalSpaceport.touched">
 
-  </div>
+    </div>
 
-  <div class="form-group">
+    <div>
 
-    <label for="departureDate" class="form-label">Departure Date:</label>
-    <input type="text" class="form-control form-location" id="departureDate" [(ngModel)]="findFlights.departureDate"
+      <label for="departureDate" class="form-label form-left">Departure Date:</label>
+
+      <label for="arrivalDate" class="form-label">Return Date:</label>
+
+    </div>
+
+    <div>
+
+      <input type="text" class="form-control form-location" id="departureDate" [(ngModel)]="findFlights.departureDate"
       name="departureDate" required #departureDate="ngModel"
       [class.is.invalid]="departureDate.invalid && departureDate.touched">
 
-    <label for="arrivalDate" class="form-label">Return Date:</label>
-    <input type="text" class="form-control form-location" id="arrivalDate" [(ngModel)]="findFlights.arrivalDate"
+      <input type="text" class="form-control form-location form-right" id="arrivalDate" [(ngModel)]="findFlights.arrivalDate"
       name="arrivalDate" required #arrivalDate="ngModel"
       [class.is.invalid]="arrivalDate.invalid && arrivalDate.touched">
 
+    </div>
+
+    
+
   </div>
-  <div class="form-group"><button type="submit" class="btn btn-info active">Search</button></div>
+
+  
 
 </form>
 
@@ -38,7 +57,7 @@
   <h3>Choose Your Departure Spaceship</h3>
   <hr>
 
-  <div class="container-sm flight-table">
+  <div class="container-sm flight-table center">
 
     <table class="table table-striped table-bordered">
       <thead>
@@ -49,14 +68,18 @@
       <tbody>
         <tr *ngFor="let all of allFlights">
           <td>{{all.id}}</td>
-          <td>{{all.departureDateTime}}</td>
+          <td>
+          
+            {{all.departureDateTime}}
+          
+          </td>
           <td>{{all.arrivalDateTime}}</td>
           <td>{{all.departureSpaceport.spName}}</td>
           <td>{{all.arrivalSpaceport.spName}}</td>
           <td>{{all.vendor.companyName}}</td>
           <td>{{all.ticketsAvailable}}</td>
           <td>{{all.pricePerTicket}}</td>
-          <td><button class="btn btn-danger" (click)="goToTicket(all.id)">Book</button></td>
+          <td><button class="btn btn-color" (click)="goToTicket(all.id)">Book</button></td>
         </tr>
       </tbody>
     </table>

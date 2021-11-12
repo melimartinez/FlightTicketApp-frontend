@@ -1,6 +1,8 @@
 .form-location {
     display: inline;
     width: 25%;
+    height: 5em;
+    margin-bottom: 2.5%;
 }
 
 .form-label {
@@ -13,5 +15,27 @@
 
 .flight-table {
     position: relative;
+    left: 150px
+    
+}
+
+.center {
+    text-align: center;
+}
+
+.btn-color {
+    background: #a4f3e3;
+}
+
+.form-left {
+    position: relative;
+    right: 330px
+}
+
+.form-labels {
+
+}
+
+.form-inputs {
     
 }
