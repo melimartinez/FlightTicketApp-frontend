@@ -39,6 +39,10 @@ export class FlightService {
     return this.http.delete<Flight>('http://localhost:8080/flight/' + id);
   }
 
+  findByDestinationsAndDate(findflight: Object):Observable<Object>{
+    return this.http.post<any[]>(`http://localhost:8080/flight/findFlights`, findflight)
+  }
+
   // editFlight(change: Flight): Observable<Flight> {
   //   return this.http. ;
   // }
