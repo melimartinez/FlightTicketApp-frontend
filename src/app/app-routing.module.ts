@@ -13,6 +13,7 @@ import { VendorflightviewComponent } from './components/vendorflightview/vendorf
 import { CustomerHomeComponent } from './components/customer-home/customer-home.component';
 import { VendorCreateFlightsComponent } from './components/vendor-create-flights/vendor-create-flights.component';
 import { LogoutComponent } from './components/logout/logout.component';
+import { ConfirmedComponent } from './components/confirmed/confirmed.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -25,7 +26,8 @@ const routes: Routes = [
   {path: 'vendorHome', component: VendorhomeComponent},
   {path: 'vendorflightview', component: VendorflightviewComponent},
   {path: 'logout', component: LogoutComponent},
-  {path:'vendorcreateflight', component: VendorCreateFlightsComponent}
+  {path:'vendorcreateflight', component: VendorCreateFlightsComponent},
+  {path: 'confirmed', component: ConfirmedComponent}
 
 ];
 

@@ -21,6 +21,7 @@ import { CustomerLandingComponent } from './components/customerLanding/customer-
 import { VendorCreateFlightsComponent } from './components/vendor-create-flights/vendor-create-flights.component';
 import { VendorflightviewComponent } from './components/vendorflightview/vendorflightview.component';
 import { LogoutComponent } from './components/logout/logout.component';
+import { ConfirmedComponent } from './components/confirmed/confirmed.component';
 
 
 
@@ -40,7 +41,8 @@ import { LogoutComponent } from './components/logout/logout.component';
     CustomerHomeComponent,
     VendorCreateFlightsComponent,
     VendorflightviewComponent,
-    LogoutComponent
+    LogoutComponent,
+    ConfirmedComponent
 
 
   ],
