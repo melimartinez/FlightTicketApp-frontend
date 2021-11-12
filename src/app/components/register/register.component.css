@@ -1,11 +1,22 @@
-/* div {
-    text-align: right;
+.col-form {
+    display: inline;
 }
 
-div p {
-    text-align: initial;
+.input-form {
+    width: 45%;
+    
 }
 
-h3 {
-    text-align: center;
-} */
+.col-form-label {
+    color: #bccfe7;
+}
+
+.form-right {
+    position: relative;
+    left: 15em;
+}
+
+.form-left {
+    position: relative;
+    right: 4em;
+}
