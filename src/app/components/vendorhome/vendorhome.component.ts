@@ -55,7 +55,7 @@ export class VendorhomeComponent implements OnInit {
 
   newFlightForm() {
     console.log("This will reroute to a new page");
-    // this.router.navigate(['vendorflightform']);
+    this.router.navigate(['vendorcreateflight']);
   }
 
   viewFlight(id: number) {

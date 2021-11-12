@@ -22,6 +22,7 @@ import { VendorCreateFlightsComponent } from './components/vendor-create-flights
 import { VendorflightviewComponent } from './components/vendorflightview/vendorflightview.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { GuestComponent } from './components/guest/guest.component';
+import { ConfirmedComponent } from './components/confirmed/confirmed.component';
 
 
 
@@ -42,7 +43,8 @@ import { GuestComponent } from './components/guest/guest.component';
     VendorCreateFlightsComponent,
     VendorflightviewComponent,
     LogoutComponent,
-    GuestComponent
+    GuestComponent,
+    ConfirmedComponent
 
 
   ],

@@ -1,68 +1,83 @@
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Spaceship Booking Form</title>
-         <!-- minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <!-- JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    
-    </head>
-    <body>
-        <!--container-->
-        <div class="container">
-            <!--form-->
-            <form class="form-group">
-    
-                <div id="form"><!--form-->
-                    <h1 class="text-center">Spaceship Booking Form</h1>
-                    <h3 class="text-white">Traveler Data</h3>
-    
-                  <div id="input0"><!--input0-->
-                      <input type="text" id="input-group" placeholder="Full Name">
-                      <input type="number" id="input-group" placeholder="Phone Number">
-                      <input type="email" id="input-group1" placeholder="Email">
-                    </div><!--input0-->
-    
-    
-                <div id="input"><!--input-->
-                    <input type="text" id="input-group" placeholder="Passport No.">
-                    <input type="text" id="input-group" placeholder="Expiry Date">
-                    <select  id="input-group" style="background: black;">
-                        <option value="">Special Meals</option>
-                        <option value="">Baby Meal</option>
-                        <option value="">Diabetic Meal</option>
-                        <option value="">Light Whole Food</option>
-                        <option value="">Low Calorie Meal</option>
-                        <option value="">Low Cholesterol Meal</option>
+<!-- Ticket Form -->
+<div class="container">
+    <div class="main">
+    <p id="response"></p>
+    <form #loginForm="ngForm" (ngSubmit)="book()">
+        <table width="100%" border="3">
+            <!--First Name-->
+            <tr>
+                <td>First Name</td>
+                <td><input type="text" name="fistName" id="firstName" [(ngModel)] = "firstName"></td>
+            </tr>
+            <!--Last Name-->
+            <tr>
+                <td>Last Name</td>
+                <td><input type="text" name="lastName" id="lastName" [(ngModel)] = "lastName"></td>
+            </tr>
+
+            <!--Phone Number-->
+            <tr>
+                <td>Phone Number</td>
+                <td><input type="number" id="phoneNo" name="phoneNo" [(ngModel)] = "phoneNumber"></td>
+            </tr>
+            <!--Email-->
+            <tr>
+                <td>Email</td>
+                <td><input type="email" id="email" name="email" [(ngModel)] = "email"></td>
+            </tr>
+
+            <tr>
+                <td>Passport Number</td>
+                <td><input type="passportNo" id="passportNo" name="passportNo" [(ngModel)] = "ticket.passportNo"></td>
+            </tr>
+
+            <!--Meals-->
+            <tr>
+                <td>Meals</td>
+                <td>
+                    <select id="meals" [(ngModel)]="ticket.meal" name="meals">
+                        <option *ngFor="let meal of meals" [value]="meal.name">
+                            {{meal.name}}
+                        </option>
                     </select>
-                    <select  id="input-group" style="background: black;">
-                        <option value="">Cabin Class</option>
-                        <option value="">Economy Class</option>
-                        <option value="">Business Class</option>
-                        <option value="">First Class</option>
-                    </select>
-                    </div><!--input-->
-    
-                    <div id="input2"><!--input2-->
-                        <input type="number" id="input-group" placeholder="Adult">
-                        <input type="number" id="input-group" placeholder="Children(2-11years)">
-                        <input type="number" id="input-group" placeholder="infant(under 2years)">
-                    </div><!--input2-->
-    
-                    <div id="input2"><!--input2-->
-                      <input type="number" id="input-group" placeholder="Carry-on bag">
-                      <input type="number" id="input-group" placeholder="Checked bag">
-                  </div><!--input2-->
-                   
-                  
-                    <button type="submit" class="btn btn-warning">Submit Form</button>
-                    <button type="reset" class="btn btn-danger">Clear Form</button>
-                </div>
-    
-            </form>
-    
-        </div>
-    </body>
-    </html>
+                </td>
+            </tr>
+            <!--Cabin Class-->
+            <tr>
+                <td>Cabin Class</td>
+                <td><select id="cabinClass" [(ngModel)]="ticket.cabinClass" name="cabinClass">
+                        <option *ngFor="let cabinClass of cabinClass" [value]="cabinClass.name"> 
+                            {{cabinClass.name}}
+                        </option> 
+                    </select></td>
+            </tr>
+            <!--Expiry Date-->
+            <tr>
+                <td>Expiry Date</td>
+                <td><input type="text" name="expiryDate" id="expiryDate" [(ngModel)] = "ticket.expiryDate"></td>
+            </tr>
+            <!--No. of Passengers-->
+            <tr>
+                <td>No. of Passengers</td>
+                <td><input type="number" name="noOfPassengers" id="noOfPassengers" [(ngModel)] = "noOfPassengers"></td>
+            </tr>
+           
+             <!--Checked bag-->
+             <tr>
+                <td>Checked bag</td>
+                <td><input type="number" name="checkedBag" id="checkedBag" [(ngModel)] = "ticket.checkedBag"></td>
+            </tr>
+            <!--Carry-on bag-->
+            <tr>
+                <td>Carry-on bag</td>
+                <td><input type="number" name="checkedBag" id="checkedBag" [(ngModel)] = "ticket.carryOnBag"></td>
+            </tr>
+            <!--Book Ticket Button-->
+            <tr>
+                <td></td>
+                <td colspan="2"><button class="btn btn-secondary">Book Ticket</button></td>
+            </tr>
+        </table>
+    </form>
+    </div>
+</div>

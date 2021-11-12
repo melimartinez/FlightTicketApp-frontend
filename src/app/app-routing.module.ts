@@ -14,6 +14,7 @@ import { CustomerHomeComponent } from './components/customer-home/customer-home.
 import { VendorCreateFlightsComponent } from './components/vendor-create-flights/vendor-create-flights.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { GuestComponent } from './components/guest/guest.component';
+import { ConfirmedComponent } from './components/confirmed/confirmed.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'guest', pathMatch: 'full'},
@@ -21,17 +22,14 @@ const routes: Routes = [
   {path: 'ticket/:id', component: TicketComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'vendorregister', component: VendorregisterComponent},
-  {path: 'login/register', component: RegisterComponent},
   {path: 'login/register/login', component: LoginComponent},
-  {path: 'customer-home', component: CustomerHomeComponent},
-  {path: 'ticket', component: TicketComponent},
   {path: 'customerHome', component: CustomerHomeComponent},
   {path: 'vendorHome', component: VendorhomeComponent},
-  {path: 'ticket', component: TicketComponent},
   {path: 'vendorflightview', component: VendorflightviewComponent},
   {path: 'logout', component: LogoutComponent},
   {path:'vendorcreateflight', component: VendorCreateFlightsComponent},
-  {path: 'guest', component: GuestComponent}
+  {path: 'guest', component: GuestComponent},
+  {path: 'confirmed', component: ConfirmedComponent}
 
 ];
 

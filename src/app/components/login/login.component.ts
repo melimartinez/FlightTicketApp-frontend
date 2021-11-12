@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
     await this.loginServ.login(this.username, this.password);
     console.log(localStorage.getItem('currentCustomer'));
     console.log(localStorage.getItem('currentVendor'));
-    localStorage.removeItem('currentCustomer');
+    //localStorage.removeItem('currentCustomer');
 
     if (this.loginServ.statusOfUser === 'Customer'){
 
