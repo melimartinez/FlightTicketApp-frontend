@@ -40,7 +40,7 @@ export class FlightService {
   }
 
   findByDestinationsAndDate(findflight: Object):Observable<Object>{
-    return this.http.post<any[]>(`http://localhost:8080/flight/findFlights`, findflight)
+    return this.http.post<any[]>('http://localhost:8080/flight/findFlights', findflight)
   }
 
   editFlight(change: Flight, id: number): Observable<Flight> {
