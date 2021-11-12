@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Flight } from 'src/app/models/Flight';
 import { FlightService } from 'src/app/services/flight.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-guest',
@@ -9,7 +10,7 @@ import { FlightService } from 'src/app/services/flight.service';
 })
 export class GuestComponent implements OnInit {
 
-  constructor(private flightHttp: FlightService) { }
+  constructor(private flightHttp: FlightService, private router: Router) { }
 
   ngOnInit(): void {
     this.displayAllFlights();
@@ -17,6 +18,11 @@ export class GuestComponent implements OnInit {
 
 
   flightList: Flight[] = [];
+
+  book() {
+    this.router.navigate(['login']);
+
+  }
 
 
   displayAllFlights() {

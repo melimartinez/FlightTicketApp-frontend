@@ -1,7 +1,5 @@
 import { Spaceport } from "./Spaceport";
-import { Spaceship } from "./Spaceship";
 import { Vendor } from "./Vendor";
-import { Spaceport } from './Spaceport';
 import { Spaceship } from './Spaceship';
 
 export class Flight {

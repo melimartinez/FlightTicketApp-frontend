@@ -86,7 +86,7 @@
                            <h5 class="card-title">Spaceport: {{flight.arrivalSpaceport.spName}}</h5>
 
                            <p class="card-text">Price: {{flight.pricePerTicket | currency: 'USD'}}</p>
-                           <a href="#" class="btn btn-light">Book</a>
+                           <button href="#" class="btn btn-light" (click)="book()">Book</button>
                         </div>
                     </div>
                 </div>
