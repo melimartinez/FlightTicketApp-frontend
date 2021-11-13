@@ -14,7 +14,8 @@ export class LogoutComponent implements OnInit {
     this.logoutpeople();
   }
   logoutpeople(){
-    localStorage.clear;
+    localStorage.removeItem("currentVendor");
+    localStorage.removeItem("currentCustomer");
     
   }
   redirect(){

@@ -25,6 +25,7 @@ export class LoginService {
   
 
   async login(username: string, password: string){
+    this.statusOfUser = "";
     const result = await this.register.getAllCustomers().toPromise();
         this.customerList = result;
         console.log(this.customerList.length);
