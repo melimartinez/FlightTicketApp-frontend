@@ -48,7 +48,8 @@ export class LoginService {
     console.log(this.custlength);
     
 
-    if(!this.currentcustomer){
+    //if(!this.currentcustomer){
+      //console.log("in if")
       const result2 = await this.register.getAllVendors().toPromise();
         this.vendorList = result2;
         this.vendLength = this.vendorList.length
@@ -66,7 +67,7 @@ export class LoginService {
       
       
 
-    }
+    //}
 
   
     
