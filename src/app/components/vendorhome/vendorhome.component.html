@@ -5,6 +5,7 @@
 
 <div id="navigationContainer" >
     <button class="btn btn-primary" type="button" (click)="newFlightForm()">Create New Flight</button><br>
+    <button class="btn btn-primary" type="button" (click)="toCreateDestination()"> Create Destination</button><br>
 
     <div *ngIf="showUpcomingFlights; else showUpcomingButton">
         <button class="btn btn-primary" type="button" (click)="getAllPastFlights()">View Past Flights</button><br>
@@ -13,6 +14,7 @@
     <ng-template #showUpcomingButton>
         <button class="btn btn-primary" type="button" (click)="ngOnInit()">View Upcoming Flights</button><br>
     </ng-template>
+
 </div>
 
 <div id="flightsContainer" class="container-sm flight-table center">
