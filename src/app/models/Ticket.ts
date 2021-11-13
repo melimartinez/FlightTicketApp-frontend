@@ -8,4 +8,6 @@ export class Ticket {
 		carryOnBag:number;
 		meal:string;
 		cabinClass:string;
+		customer:Customer;
+		flight:Flight;
 }

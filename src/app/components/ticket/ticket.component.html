@@ -28,14 +28,14 @@
 
             <tr>
                 <td>Passport Number</td>
-                <td><input type="passportNo" id="passportNo" name="passportNo" [(ngModel)] = "ticket.passportNo"></td>
+                <td><input type="number" id="passportNo" name="passportNo" [(ngModel)] = "passportNo"></td>
             </tr>
 
             <!--Meals-->
             <tr>
                 <td>Meals</td>
                 <td>
-                    <select id="meals" [(ngModel)]="ticket.meal" name="meals">
+                    <select id="meals" [(ngModel)]="mealSelected" name="meals">
                         <option *ngFor="let meal of meals" [value]="meal.name">
                             {{meal.name}}
                         </option>
@@ -45,7 +45,7 @@
             <!--Cabin Class-->
             <tr>
                 <td>Cabin Class</td>
-                <td><select id="cabinClass" [(ngModel)]="ticket.cabinClass" name="cabinClass">
+                <td><select id="cabinClass" [(ngModel)]="cabinSelected" name="cabinClass">
                         <option *ngFor="let cabinClass of cabinClass" [value]="cabinClass.name"> 
                             {{cabinClass.name}}
                         </option> 
@@ -54,7 +54,7 @@
             <!--Expiry Date-->
             <tr>
                 <td>Expiration Date</td>
-                <td><input type="text" name="expiryDate" id="expiryDate" [(ngModel)] = "ticket.expiryDate"></td>
+                <td><input type="text" name="expiryDate" id="expiryDate" [(ngModel)] = "expiryDate"></td>
             </tr>
             <!--No. of Passengers-->
             <tr>
@@ -65,12 +65,12 @@
              <!--Checked bag-->
              <tr>
                 <td>Checked bag</td>
-                <td><input type="number" name="checkedBag" id="checkedBag" [(ngModel)] = "ticket.checkedBag"></td>
+                <td><input type="number" name="checkedBag" id="checkedBag" [(ngModel)] = "checkedBag"></td>
             </tr>
             <!--Carry-on bag-->
             <tr>
                 <td>Carry-on bag</td>
-                <td><input type="number" name="checkedBag" id="checkedBag" [(ngModel)] = "ticket.carryOnBag"></td>
+                <td><input type="number" name="checkedBag" id="checkedBag" [(ngModel)] = "carryOnBag"></td>
             </tr>
             <!--Book Ticket Button-->
             <tr>
