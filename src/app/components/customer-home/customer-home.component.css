@@ -32,10 +32,60 @@
     right: 330px
 }
 
-.form-labels {
+.btn-color {
+    margin: auto auto;
+    font-size: 1.5em;
+    color: black;
+    background-color: #d1c156;
+    height: 2.5em;
+    width: 6.75em;
+}
+
+.btn-color:hover {
+    background-color: #86c7ba;
+    border: none;
+}
+
+.btn-color2 {
+   
+    color: black;
+    background-color: #d1c156;
+    
+}
+
+.btn-color2:hover {
+    background-color: #86c7ba;
+    border: #86c7ba;
+}
+
+.form-label {
+    color: #bccfe7;
 
 }
 
-.form-inputs {
-    
+h3 {
+    color: #bccfe7;
+}
+
+.table-position {
+    position: relative;
+}
+
+.thead-color {
+    background-color: #abbbcf;
+}
+
+.form-right {
+    position: relative;
+    right: 1em;
+}
+
+.form-row-right {
+    position: relative;
+    left: 2em;
+}
+
+.form-right-label {
+    position: relative;
+    left: 2em;
 }
