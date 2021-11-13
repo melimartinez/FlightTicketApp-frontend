@@ -44,7 +44,7 @@ import { CreateDestinationComponent } from './components/create-destination/crea
     VendorflightviewComponent,
     LogoutComponent,
     GuestComponent,
-    ConfirmedComponent
+    ConfirmedComponent,
     CreateDestinationComponent
 
   ],

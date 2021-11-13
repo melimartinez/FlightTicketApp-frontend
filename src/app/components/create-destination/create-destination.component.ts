@@ -10,7 +10,7 @@ import { SpaceportService } from 'src/app/services/spaceport.service';
 })
 export class CreateDestinationComponent implements OnInit {
 
-  constructor(private spaceportHttp: SpaceportService ,private router: Router) { }
+  constructor(private spaceportHttp: SpaceportService, private router: Router) { }
 
   ngOnInit(): void {
     this.message = false
