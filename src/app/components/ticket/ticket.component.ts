@@ -24,7 +24,8 @@ export class TicketComponent implements OnInit {
 
   firstName:string;
   lastName:string;
-  phoneNumber:string;
+  phoneNumber:number;
+  formattedPh:string;
   email:string;
   noOfPassengers:number;
 
@@ -50,7 +51,14 @@ export class TicketComponent implements OnInit {
       {id:4, name:"First Class"}
     ]
     this.cabinSelected=1;
+
+    this.firstName = this.customer.firstName;
+    this.lastName = this.customer.lastName;
+    this.formattedPh = this.customer.phoneNumber + "";
+    this.formattedPh = this.formattedPh.slice(0,3) + '-' + this.formattedPh.slice(3, 6) + '-' + this.formattedPh.slice(6);
+    this.email = this.customer.email;
   } 
+
 
   book(){
     this.ticketService.addTicket(this.ticket)

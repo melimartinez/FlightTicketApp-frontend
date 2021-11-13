@@ -9,6 +9,7 @@
     margin-left: 250px; /* Same as the width of the sidebar */
     padding: 10px;
     padding-top: 3px;
+    background-color: white;
   }  
 
   #response { 
