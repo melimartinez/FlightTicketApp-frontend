@@ -1,24 +1,24 @@
 <div id="homeBanner">
     <!-- <h1 style="border: solid">Vendor Home page Banner here(insert Image)</h1> -->
-    <h2>{{currentVendor.companyName}}</h2>
+    <h1>{{currentVendor.companyName}}</h1>
 </div>
 
-<div id="navigationContainer" style="border: solid;">
-    <button type="button" (click)="newFlightForm()">Create New Flight</button><br>
+<div id="navigationContainer" >
+    <button class="btn btn-primary" type="button" (click)="newFlightForm()">Create New Flight</button><br>
 
     <div *ngIf="showUpcomingFlights; else showUpcomingButton">
-        <button type="button" (click)="getAllPastFlights()">View Past Flights</button><br>
+        <button class="btn btn-primary" type="button" (click)="getAllPastFlights()">View Past Flights</button><br>
     </div>
 
     <ng-template #showUpcomingButton>
-        <button type="button" (click)="ngOnInit()">View Upcoming Flights</button><br>
+        <button class="btn btn-primary" type="button" (click)="ngOnInit()">View Upcoming Flights</button><br>
     </ng-template>
 </div>
 
-<div id="flightsContainer" style="border: solid;">
+<div id="flightsContainer" class="container-sm flight-table center">
     <div *ngIf="showUpcomingFlights; else showPastFlights">
-        <h3>Upcoming Flights:</h3>
-        <table id="FlightsTable">
+        <h2>Upcoming Flights:</h2>
+        <table id="FlightsTable" class="table table-dark table-bordered">
             <thead class="tableHead">
                 <tr>
                     <th>Flight Number(ID)</th>
@@ -34,22 +34,21 @@
             <tbody id="vendorTableBody">
                 <tr *ngFor="let flight of upcomingFlights">
                     <td >{{flight.id}}</td>
-                    <td>{{flight.departureDateTime}}</td>
-                    <td>{{flight.arrivalDateTime}}</td>
+                    <td>{{flight.departureDateTime | date: 'MMMM d, y, h:mm a'}}</td>
+                    <td>{{flight.arrivalDateTime | date: 'MMMM d, y, h:mm a'}}</td>
                     <td>{{flight.spaceship.ssName}}</td>
                     <td>{{flight.departureSpaceport.spName}}</td>
                     <td>{{flight.arrivalSpaceport.spName}}</td>
                     <td>{{flight.status}}</td>
-                    <button type="button" (click)="viewFlight(flight.id)">View Flight</button>
-                    <!-- <button type="button" (click)="deleteFlight(flight.id)">Delete Flight</button><br> -->
+                    <button type="button" class="btn btn-secondary " (click)="viewFlight(flight.id)">View Flight</button>
                 </tr>
             </tbody>
         </table>
     </div>
 
     <ng-template #showPastFlights>
-        <h3>Past Flights:</h3>
-        <table id="FlightsTable">
+        <h2>Past Flights:</h2>
+        <table id="FlightsTable" class="table table-dark table-bordered">
             <thead class="tableHead">
                 <tr>
                     <th>Flight Number(ID)</th>

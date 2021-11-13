@@ -1,7 +1,12 @@
-h1{
-    font-style: normal;
-}
-
+h2 {
+    
+    font-family: Distant Galaxy;
+    font-size: 2em;
+    color: #bccfe7  }
 th {
     border: solid;
+}
+
+h1 {
+    color:#bccfe7
 }
