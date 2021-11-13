@@ -6,6 +6,7 @@ import { FlightService } from 'src/app/services/flight.service';
 import { TicketService } from 'src/app/services/ticket.service';
 import { Meals } from 'src/app/models/Meals';
 import { CabinClass } from 'src/app/models/CabinClass';
+import { Flight } from 'src/app/models/Flight';
 
 @Component({
   selector: 'app-ticket',
@@ -14,7 +15,9 @@ import { CabinClass } from 'src/app/models/CabinClass';
 })
 export class TicketComponent implements OnInit {
 
+  id:number;
   customer: Customer = JSON.parse(localStorage.getItem('currentCustomer'));
+  flight: Flight;
   ticket: Ticket = new Ticket();
 
   meals:Meals[];
@@ -32,6 +35,14 @@ export class TicketComponent implements OnInit {
   constructor(private flightService: FlightService, private ticketService:TicketService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
+
+    this.id = this.route.snapshot.params['id'];
+
+    this.flightService.getFlightById(this.id)
+    .subscribe(data=> {
+      console.log(data);
+      localStorage.setItem('flightInfo', JSON.stringify(data));
+    }, error => console.log(error));
 
     this.meals = [
       {id:1, name:"Meals"},
@@ -66,6 +77,7 @@ export class TicketComponent implements OnInit {
       data=>{
         console.log("response received");
         console.log(this.ticket);
+        localStorage.setItem('ticketInfo', JSON.stringify(this.ticket));
         this.router.navigate(['confirmed']);
       },
       error=>{

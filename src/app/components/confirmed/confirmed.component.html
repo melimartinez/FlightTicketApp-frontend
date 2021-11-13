@@ -1,12 +1,93 @@
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css"> 
+
+
 <div class="container">
     <div class="innerContainer">
         <img src="assets/email.png" alt="email">
         <!-- Email Image Can Be Placed Here -->
+
     <h1>Thank You!</h1>
     For booking your flight with us.
     Your submission has been received.
     Your booking will be confirmed soon.
     </div>
+
+
+    
+    <div>
+        <h1>Flight Itinerary</h1>
+        <table width="80%">
+            <!--From Spaceport, Planet-->   <!--To Spaceport, Planet-->
+            <tr>
+                <td><i class="fas fa-plane-departure"></i> {{flight.departureSpaceport.spName}}, {{flight.departureSpaceport.planet}}</td>
+                <td><i class="fas fa-plane-arrival"></i> {{flight.arrivalSpaceport.spName}}, {{flight.arrivalSpaceport.planet}}</td>
+            </tr>
+        </table>
+        <hr id="divider">
+
+             <!--Passenger Info-->
+        <table width="80%">
+            <h5>PASSENGER INFORMATION</h5>
+            <tr>
+                <td><strong>Name of Traveller</strong></td>
+                <td><strong>Email</strong></td>
+            </tr>
+            <tr>
+                <td>{{customer.firstName}} {{customer.lastName}}</td>
+                <td>{{customer.email}}</td>
+            </tr>
+            <tr>
+                <td><strong>Reservation ID</strong></td>
+                <td><strong>Address</strong></td>
+
+            </tr>
+            <tr>
+                <td>ZXMAR1101</td>
+                <td>{{customer.addressLine1}},
+                    <p>{{customer.city}},
+                        {{customer.state}},
+                        {{customer.zipcode}}</p>
+                </td>
+            </tr>
+        </table>
+        <hr id="divider">
+
+
+        <!--Departure Info-->
+        <table width="80%">
+            <h5>DEPARTURE INFORMATION</h5>
+            <tr>
+                <td rowspan="4">
+                    <p><strong>Flight No.</strong></p>
+                    PR 3301
+                    <p><strong>Class</strong></p>
+                    {{ticket.cabinClass}}
+
+                    <p><strong>Status</strong></p>
+                    CONFIRMED
+                </td>
+                <td><strong>Departure</strong></td>
+                <td><strong>Departure Date</strong></td>
+            </tr>
+            <tr>
+                <td>{{flight.departureSpaceport.spName}}, {{flight.departureSpaceport.planet}}</td>
+                <td>{{flight.departureDateTime}}</td>
+            </tr>
+            <tr>
+                <td><strong>Arrival</strong></td>
+                <td><strong>Arrival Date</strong></td>
+            </tr>
+            <tr>
+                <td>{{flight.arrivalSpaceport.spName}}, {{flight.arrivalSpaceport.planet}}</td>
+                <td>{{flight.arrivalDateTime}}</td>
+            </tr>
+        </table>
+        <hr id="divider">
+
+    </div>
+
+
+    
 
     
     </div>

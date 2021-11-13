@@ -12,5 +12,15 @@
     padding:10px;
     width:50%;
     height:50%;
-    background-color: rgb(236, 218, 192);
+    background-color: rgb(245, 223, 189);         
+}
+
+#divider{
+    color:grey;
+    height:10px;
+}
+
+h5{
+    color:grey;
+    font-size: medium;
 }
