@@ -64,11 +64,12 @@ export class VendorCreateFlightsComponent implements OnInit {
      (response)=>{console.log(response)}
   )
   this.router.navigate(["vendorHome"]);
-
-   
-
  }
  
+ returnVendorHome() {
+   this.router.navigate(['vendorHome']);
+ }
  
 
 }
+
