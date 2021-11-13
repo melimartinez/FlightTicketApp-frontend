@@ -14,11 +14,11 @@ export class LogoutComponent implements OnInit {
     this.logoutpeople();
   }
   logoutpeople(){
-    localStorage.removeItem('currentCustomer');
-    localStorage.removeItem('currentVendor');
+    localStorage.clear;
+    
   }
   redirect(){
-    this.router.navigate(['login']);
+    this.router.navigate(['guest']);
 
   }
 
