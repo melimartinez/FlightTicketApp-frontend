@@ -7,6 +7,7 @@ import { VendorService } from 'src/app/services/vendor.service';
 import{Flight} from 'src/app/models/Flight'
 import { Vendor } from 'src/app/models/Vendor';
 import { FlightService } from 'src/app/services/flight.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-vendor-create-flights',
@@ -15,7 +16,7 @@ import { FlightService } from 'src/app/services/flight.service';
 })
 export class VendorCreateFlightsComponent implements OnInit {
 
-  constructor(private serv: VendorService, private portServ:SpaceportService, private shipServ: SpaceshipService, private flightServ: FlightService ) {}
+  constructor(private serv: VendorService, private portServ:SpaceportService, private shipServ: SpaceshipService, private flightServ: FlightService,private router: Router ) {}
 
   ngOnInit(): void {
     this.getSpacePorts();
@@ -62,6 +63,7 @@ export class VendorCreateFlightsComponent implements OnInit {
    this.flightServ.addFlight(f).subscribe(
      (response)=>{console.log(response)}
   )
+  this.router.navigate(["vendorHome"]);
 
    
 
