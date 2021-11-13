@@ -3,7 +3,7 @@
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
-    border:rgb(25, 4, 85) solid 1px;
+    border:#85142d solid 1px;
     border-top-width: 40px;
     border-radius: 5px;
     margin-left: 250px; /* Same as the width of the sidebar */
@@ -40,5 +40,22 @@
     td select{
       width: 100%;
     }
+
+    .btn-color {
+      
+      font-size: 1.5em;
+      color: black;
+      background-color: #d1c156;
+      height: 2.5em;
+      width: 6.75em;
+
+      position: relative;
+      right: 65px;
+  }
+  
+  .btn-color:hover {
+      background-color: #86c7ba;
+      border: none;
+  }
 
   
