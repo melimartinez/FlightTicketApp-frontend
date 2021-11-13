@@ -15,7 +15,6 @@ export class VendorhomeComponent implements OnInit {
 
   
   ngOnInit(): void {
-    // this.getAllFlights();
     this.getAllFutureFlights();
   }
 
@@ -24,15 +23,15 @@ export class VendorhomeComponent implements OnInit {
   pastFlights: Flight[] = [];
   showUpcomingFlights: boolean = true;
   showPastFlight: boolean = false;
-  showNewFlightForm: boolean = false; // still need to create newFlightForm
-  showEditFlightForm: boolean = false; // will basicallily replicate newFlightForm when its done
+  showNewFlightForm: boolean = false; 
+  showEditFlightForm: boolean = false; 
   currentVendor: Vendor = JSON.parse(localStorage.getItem('currentVendor')); // 
   flightId: number = 0;
 
   
 
-  getAllFutureFlights() {  //Gets all future flights for this particular vendor
-    // console.log( this.currentVendor.vendor_id)
+  //Gets all future flights for this particular vendor only
+  getAllFutureFlights() {  
     this.vendorHttp.getAllFutureFlights(this.currentVendor.vendor_id).subscribe (
       (response) => {
         this.upcomingFlights = response;
@@ -42,6 +41,7 @@ export class VendorhomeComponent implements OnInit {
     );
   }
 
+  //Gets all past flights for this vendor only
   getAllPastFlights() {
     let id = this.currentVendor.vendor_id;
     this.vendorHttp.getAllPastFlights(id).subscribe (
@@ -53,22 +53,29 @@ export class VendorhomeComponent implements OnInit {
     );
   }
 
+  //Move to new flight form
   newFlightForm() {
-    console.log("This will reroute to a new page");
     this.router.navigate(['vendorcreateflight']);
   }
 
+  // Move to view individual flight
   viewFlight(id: number) {
     console.log(id);
     this.router.navigate(['vendorflightview'])
   }
 
-  deleteFlight(id: number) {
-    this.vendorHttp.deleteFlight(id).subscribe (
-      (data) => {
-        this.getAllFutureFlights();
-        console.log(data)
-      }
-    )
+//   // delete functionality now within flight view
+//   deleteFlight(id: number) {
+//     this.vendorHttp.deleteFlight(id).subscribe (
+//       (data) => {
+//         this.getAllFutureFlights();
+//         console.log(data)
+//       }
+//     )
+//   }
+
+  //Move to create destination form
+  toCreateDestination(){ 
+    this.router.navigate(['create-destination']);
   }
 }
