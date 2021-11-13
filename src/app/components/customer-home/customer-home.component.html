@@ -16,10 +16,10 @@
       <div class="form-group form-row-right">
 
          <label for="departureDate" class="form-label">Departure Date:</label>
-          <input type="date" class="form-control form-location" id="departureDate" [(ngModel)]="findFlights.departureDate" name="departureDate" required #departureDate="ngModel">
+          <input type="number" class="form-control form-location" id="departureDate" [(ngModel)]="findFlights.departureDate" name="departureDate" required #departureDate="ngModel">
      
           <label for="arrivalDate" class="form-label form-right-label">Return Date:</label>
-          <input type="date" class="form-control form-location form-right" id="arrivalDate" [(ngModel)]="findFlights.arrivalDate" name="arrivalDate" required #arrivalDate="ngModel">
+          <input type="number" class="form-control form-location form-right" id="arrivalDate" [(ngModel)]="findFlights.arrivalDate" name="arrivalDate" required #arrivalDate="ngModel">
           
         </div>
         <div class="form-group"><button type="submit" class="btn btn-color active">Search</button></div>
