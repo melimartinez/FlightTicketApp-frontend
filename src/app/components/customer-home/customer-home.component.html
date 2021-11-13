@@ -6,24 +6,20 @@
       <div class="form-group mt-5 pt-5">
 
         <label for="departureSpaceport" class="form-label">Departure Spaceport:</label>
-          <input type="text" class="form-control form-location" id="departureSpaceport" [(ngModel)]="findFlights.departureSpaceport" name="departureSpaceport" required #departureSpaceport="ngModel"
-          [class.is.invalid]="departureSpaceport.invalid && departureSpaceport.touched">
+          <input type="text" class="form-control form-location" id="departureSpaceport" [(ngModel)]="findFlights.departureSpaceport" name="departureSpaceport" required #departureSpaceport="ngModel">
   
         <label for="arrivalSpaceport" class="form-label">Arrival Spaceport:</label>
-        <input type="text" class="form-control form-location" id="arrivalSpaceport" [(ngModel)]="findFlights.arrivalSpaceport" name="arrivalSpaceport" required #arrivalSpaceport="ngModel"
-         [class.is.invalid]="arrivalSpaceport.invalid && arrivalSpaceport.touched"> 
+        <input type="text" class="form-control form-location" id="arrivalSpaceport" [(ngModel)]="findFlights.arrivalSpaceport" name="arrivalSpaceport" required #arrivalSpaceport="ngModel"> 
           
       </div>
 
       <div class="form-group form-row-right">
 
          <label for="departureDate" class="form-label">Departure Date:</label>
-          <input type="text" class="form-control form-location" id="departureDate" [(ngModel)]="findFlights.departureDate" name="departureDate" required #departureDate="ngModel"
-          [class.is.invalid]="departureDate.invalid && departureDate.touched">
+          <input type="date" class="form-control form-location" id="departureDate" [(ngModel)]="findFlights.departureDate" name="departureDate" required #departureDate="ngModel">
      
           <label for="arrivalDate" class="form-label form-right-label">Return Date:</label>
-          <input type="text" class="form-control form-location form-right" id="arrivalDate" [(ngModel)]="findFlights.arrivalDate" name="arrivalDate" required #arrivalDate="ngModel"
-          [class.is.invalid]="arrivalDate.invalid && arrivalDate.touched">
+          <input type="date" class="form-control form-location form-right" id="arrivalDate" [(ngModel)]="findFlights.arrivalDate" name="arrivalDate" required #arrivalDate="ngModel">
           
         </div>
         <div class="form-group"><button type="submit" class="btn btn-color active">Search</button></div>
