@@ -1,11 +1,13 @@
 <br>
+<h1>{{currentFlight.vendor.companyName}}</h1>
+<h1>Flight Number: {{currentFlight.id}}</h1>
 <!-- Departure Date field -->
 <div class="form-group row">
     <label for="departureDateTimeInput" class="col-sm-3 col-form-label">Departure Date:</label>
     <div class="col-sm-6">
 
         <input *ngIf="!editActive; else editDeparture" type="number" class="form-control" id='departureDateTimeInput'
-            placeholder="ddmmyyyy" value="{{currentFlight.departureDateTime}}" readonly><br>
+            placeholder="ddmmyyyy" value="{{currentFlight.departureDateTime}}" readonly>
 
         <ng-template #editDeparture>
             <input type="number" class="form-control" id='departureDateTimeInput' placeholder="ddmmyyyy"
@@ -21,7 +23,7 @@
     <div class="col-sm-6">
 
         <input *ngIf="!editActive; else editArrival" type="number" class="form-control" id='arrivalDateTimeInput'
-            placeholder="ddmmyyyy" value="{{currentFlight.arrivalDateTime}}" readonly><br>
+            placeholder="ddmmyyyy" value="{{currentFlight.arrivalDateTime}}" readonly>
 
         <ng-template #editArrival>
             <input type="number" class="form-control" id='arrivalDateTimeInput' placeholder="ddmmyyyy"
@@ -36,7 +38,7 @@
     <div class="col-sm-6">
 
         <input *ngIf="!editActive; else editPrice" type="number" class="form-control" id='priceInput'
-            placeholder="00.00" value="{{currentFlight.pricePerTicket}}" readonly><br>
+            placeholder="00.00" value="{{currentFlight.pricePerTicket}}" readonly>
 
         <ng-template #editPrice>
             <input type="number" class="form-control" id='priceInput' placeholder="00.00"
@@ -51,7 +53,7 @@
     <div class="col-sm-6">
 
         <input *ngIf="!editActive; else editCost" type="number" class="form-control" id='costInput' placeholder="00.00"
-            value="{{currentFlight.vendorCost}}" readonly><br>
+            value="{{currentFlight.vendorCost}}" readonly>
 
         <ng-template #editCost>
             <input type="number" class="form-control" id='costInput' placeholder="00.00"
@@ -67,7 +69,7 @@
     <div class="col-sm-6">
 
         <input *ngIf="!editActive; else editAvailable" type="number" class="form-control" id='costInput'
-            placeholder="00.00" value="{{currentFlight.ticketsAvailable}}" readonly><br>
+            placeholder="00.00" value="{{currentFlight.ticketsAvailable}}" readonly>
 
         <ng-template #editAvailable>
             <input type="number" class="form-control" id='costInput' placeholder="00.00"
@@ -82,8 +84,7 @@
     <div class="col-sm-6">
 
         <input *ngIf="!editActive; else editStatus" type="text" class="form-control" id='costInput' placeholder="00.00"
-            value="{{currentFlight.status}}" readonly><br>
-
+            value="{{currentFlight.status}}" readonly>
         <ng-template #editStatus>
             <input type="text" class="form-control" id='costInput' placeholder="00.00"
                 value="{{currentFlight.status}}" [(ngModel)]="currentFlight.status">
@@ -147,3 +148,4 @@
 
     <button id="vendorReturnButton" type="button" class="btn btn-dark" (click)="returnVendorHome()">Return Home</button>
 </div>
+
