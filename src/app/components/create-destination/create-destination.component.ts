@@ -31,4 +31,8 @@ export class CreateDestinationComponent implements OnInit {
     )
   }
 
+  returnVendorHome() {
+    this.router.navigate(['vendorHome'])
+  }
+
 }
