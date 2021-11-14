@@ -30,6 +30,8 @@ export class VendorflightviewComponent implements OnInit {
   departureSpaceportIndex: number;
   arrivalSpaceportIndex: number;
   spaceshipIndex: number;
+  flightDeleted: boolean = false;
+
   
   getAllSpaceports() {
     this.spaceportHttp.getAllSpaceports().subscribe (
@@ -59,13 +61,22 @@ export class VendorflightviewComponent implements OnInit {
   }
 
   deleteFlight() {
-    this.flightHttp.deleteFlight(this.currentFlightId).subscribe (
-      (data) => {
-        console.log("Successfully delete Flight")
-        console.log(data)
-        this.router.navigate(['vendorHome']);
+    this.currentFlight.status = "Cancelled";
+    this.flightHttp.editFlight(this.currentFlight, this.currentFlight.id).subscribe (
+      (response) => {
+        console.log(response)
+        this.flightDeleted = true;
+        setTimeout(() => this.router.navigate(['vendorHome']), 1500);
       }
-    );
+    )
+      // This version of deleteFlight would actually remove the flight from database - we want to update the status so we can see cancelled flights
+    // this.flightHttp.deleteFlight(this.currentFlightId).subscribe (
+    //   (data) => {
+    //     console.log("Successfully delete Flight")
+    //     console.log(data)
+    //     this.router.navigate(['vendorHome']);
+    //   }
+    // );
   }
 
 
@@ -100,3 +111,4 @@ export class VendorflightviewComponent implements OnInit {
    }
   
 }
+
