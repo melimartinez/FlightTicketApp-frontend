@@ -34,8 +34,12 @@ background-color: rgb(255, 205, 187, .45);
 }
 
 h5{
-    color:grey;
+    color: #99a8b9;
     font-size: 2em;
+}
+
+.divider-color {
+    background-color: #abbbcf;
 }
 
 .td-size {
