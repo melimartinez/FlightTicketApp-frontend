@@ -4,15 +4,15 @@
 </div>
 
 <div id="navigationContainer" class="d-grid gap-2 col-2 mx-auto">
-    <button class="btn btn-primary" type="button" (click)="newFlightForm()">Create New Flight</button>
-    <button class="btn btn-primary" type="button" (click)="toCreateDestination()"> Create Destination</button><br>
+    <button class="btn btn-color" type="button" (click)="newFlightForm()">Create New Flight</button>
+    <button class="btn btn-color" type="button" (click)="toCreateDestination()"> Create Destination</button><br>
 
     <div *ngIf="showUpcomingFlights; else showUpcomingButton">
-        <button class="btn btn-primary" type="button" (click)="getAllPastFlights()">View Past Flights</button><br>
+        <button class="btn btn-color" type="button" (click)="getAllPastFlights()">View Past Flights</button><br>
     </div>
 
     <ng-template #showUpcomingButton>
-        <button class="btn btn-primary" type="button" (click)="ngOnInit()">View Upcoming Flights</button><br>
+        <button class="btn btn-color" type="button" (click)="ngOnInit()">View Upcoming Flights</button><br>
     </ng-template>
 
 </div>
@@ -43,7 +43,7 @@
                     <td>{{flight.arrivalSpaceport.spName}}</td>
                     <td>{{flight.status}}</td>
                     <div>
-                        <button type="button" class="btn btn-primary " (click)="viewFlight(flight.id)">View Flight</button>
+                        <button type="button" class="btn btn-color2 " (click)="viewFlight(flight.id)">View Flight</button>
                     </div>
                 </tr>
             </tbody>
