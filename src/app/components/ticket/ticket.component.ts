@@ -8,6 +8,7 @@ import { Meals } from 'src/app/models/Meals';
 import { CabinClass } from 'src/app/models/CabinClass';
 import { Flight } from 'src/app/models/Flight';
 
+
 @Component({
   selector: 'app-ticket',
   templateUrl: './ticket.component.html',
@@ -16,21 +17,27 @@ import { Flight } from 'src/app/models/Flight';
 export class TicketComponent implements OnInit {
 
   id:number;
+  ticket = new Ticket();
   customer: Customer = JSON.parse(localStorage.getItem('currentCustomer'));
   flight: Flight;
-  ticket: Ticket = new Ticket();
 
+  passportNo:number;
+  expiryDate:string;
+	checkedBag:number;
+	carryOnBag:number;
+  mealSelected:string;
+  cabinSelected:string;
+ 
   meals:Meals[];
-  mealSelected:number;
   cabinClass:CabinClass[];
-  cabinSelected:number;
-
   firstName:string;
   lastName:string;
   phoneNumber:number;
   formattedPh:string;
   email:string;
   noOfPassengers:number;
+
+  
 
   constructor(private flightService: FlightService, private ticketService:TicketService, private route: ActivatedRoute, private router: Router) { }
 
@@ -41,8 +48,9 @@ export class TicketComponent implements OnInit {
     this.flightService.getFlightById(this.id)
     .subscribe(data=> {
       console.log(data);
+      this.flight = data;
       localStorage.setItem('flightInfo', JSON.stringify(data));
-    }, error => console.log(error));
+        }, error => console.log(error));
 
     this.meals = [
       {id:1, name:"Meals"},
@@ -53,7 +61,7 @@ export class TicketComponent implements OnInit {
       {id:6, name:"Low Calorie Meal"},
       {id:7, name:"Low Cholesterol Meal"}
     ]
-    this.mealSelected=1;
+    
 
     this.cabinClass = [
       {id:1, name:"Cabin Class"},
@@ -61,8 +69,7 @@ export class TicketComponent implements OnInit {
       {id:3, name:"Business Class"},
       {id:4, name:"First Class"}
     ]
-    this.cabinSelected=1;
-
+   
     this.firstName = this.customer.firstName;
     this.lastName = this.customer.lastName;
     this.formattedPh = this.customer.phoneNumber + "";
@@ -72,6 +79,18 @@ export class TicketComponent implements OnInit {
 
 
   book(){
+
+    this.ticket = {
+      passportNo: this.passportNo,
+      expiryDate: this.expiryDate,
+      meal: this.mealSelected,
+      cabinClass: this.cabinSelected,
+      checkedBag: this.checkedBag,
+      carryOnBag:this.carryOnBag,
+      customer:this.customer,
+      flight:this.flight
+    }
+
     this.ticketService.addTicket(this.ticket)
     .subscribe(
       data=>{
@@ -86,8 +105,8 @@ export class TicketComponent implements OnInit {
     )
   }
 
- 
-
 }
+
+
 
 
