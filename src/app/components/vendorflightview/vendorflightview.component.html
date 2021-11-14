@@ -11,7 +11,7 @@
             placeholder="ddmmyyyy" value="{{currentFlight.departureDateTime}}" readonly>
 
         <ng-template #editDeparture>
-            <input type="number" class="form-control" id='departureDateTimeInput' placeholder="ddmmyyyy"
+            <input type="number" class="form-control no-edit-color" id='departureDateTimeInput' placeholder="ddmmyyyy"
                 value="{{currentFlight.departureDateTime}}" [(ngModel)] = "currentFlight.departureDateTime">
         </ng-template>
 
@@ -27,8 +27,8 @@
             placeholder="ddmmyyyy" value="{{currentFlight.arrivalDateTime}}" readonly>
 
         <ng-template #editArrival>
-            <input type="number" class="form-control" id='arrivalDateTimeInput' placeholder="ddmmyyyy"
-                value="{{currentFlight.arrivalDateTime}}" [(ngModel)]="currentFlight.arrivalDateTime">
+            <input type="number" class="form-control no-edit-color" id='arrivalDateTimeInput' placeholder="ddmmyyyy"
+                value="{{currentFlight.arrivalDateTime | date: 'MMMM d, y, h:mm a'}}" [(ngModel)]="currentFlight.arrivalDateTime">
         </ng-template>
     </div>
 </div>
@@ -98,12 +98,12 @@
 <div class="form-group row">
     <label  for="departureSpace" class="col-sm-3 col-form-label">Departure SpacePort:</label>
 
-    <input *ngIf="!editActive; else editDSpaceport" class="col-sm-4" name="departureSpace" type="text"
+    <input *ngIf="!editActive; else editDSpaceport" class="col-sm-4 form-control input-form" name="departureSpace" type="text"
         value="{{currentFlight.departureSpaceport.spName}}" readonly>
 
     <ng-template #editDSpaceport>
             <!-- <label for="departureSpace" class="col-sm-3 col-form-label">Departure SpacePort:</label> -->
-            <select class = "col-sm-4" [(ngModel)] = 'departureSpaceportIndex'>
+            <select class = "col-sm-4 form-control input-form" [(ngModel)] = 'departureSpaceportIndex'>
                 <option *ngFor = 'let port of spaceportList' value= {{spaceportList.indexOf(port)}}>{{port.spName}}</option>
             </select>
     </ng-template>
@@ -112,11 +112,11 @@
 <!-- Arrival spaceport field -->
 <div class="form-group row">
     <label for="arrivalSpace" class="col-sm-3 col-form-label">ArrivalSpacePort:</label>
-    <input *ngIf="!editActive; else editASpaceport" class="col-sm-4" name="arrivalSpace" type="text" value="{{currentFlight.arrivalSpaceport.spName}}" readonly>
+    <input *ngIf="!editActive; else editASpaceport" class="col-sm-4 form-control input-form" name="arrivalSpace" type="text" value="{{currentFlight.arrivalSpaceport.spName}}" readonly>
 
     <ng-template #editASpaceport>
         <!-- <label for="arrivalSpace" class="col-sm-3 col-form-label">Arrival SpacePort:</label> -->
-        <select class = "col-sm-4" [(ngModel)] = 'arrivalSpaceportIndex'>
+        <select class = "col-sm-4 form-control input-form" [(ngModel)] = 'arrivalSpaceportIndex'>
             <option *ngFor = 'let port1 of spaceportList' value= {{spaceportList.indexOf(port1)}}>{{port1.spName}}</option>
         </select>
     </ng-template>
@@ -125,11 +125,11 @@
 <!-- Spaceship field -->
 <div class="form-group row">
     <label  for="spaceshipInput" class="col-sm-3 col-form-label">Spaceship:</label>
-    <input *ngIf="!editActive; else editSpaceship" class="col-sm-4" name="spaceshipInput" type="text" value="{{currentFlight.spaceship.ssName}}" readonly>
+    <input *ngIf="!editActive; else editSpaceship" class="col-sm-4 form-control input-form" name="spaceshipInput" type="text" value="{{currentFlight.spaceship.ssName}}" readonly>
 
     <ng-template #editSpaceship>
         <!-- <label for="spaceshipInput" class="col-sm-3 col-form-label">Spaceship:</label> -->
-        <select class = "col-sm-4" [(ngModel)] = 'spaceshipIndex'>
+        <select class = "col-sm-4 form-control input-form" [(ngModel)] = 'spaceshipIndex'>
             <option *ngFor = 'let ship of spaceshipList' value= {{spaceshipList.indexOf(ship)}}>{{ship.ssName}}</option>
         </select>
     </ng-template>
@@ -139,15 +139,16 @@
 <!-- Buttons -->
 <div class="d-grid gap-2 col-2 mx-auto">
 
-    <button *ngIf="!editActive; else finishEdit" id="editFlightButton" type="button" class="btn btn-dark" (click)="editFlight()">Edit Flight</button>
+    <button *ngIf="!editActive; else finishEdit" id="editFlightButton" type="button" class="btn btn-color" (click)="editFlight()">Edit Flight</button>
+
     <ng-template #finishEdit>
-        <button id="finishEditButton" type="button" class="btn btn-dark" (click)="editFlight()">Cancel Edit</button>
+        <button *ngIf="editActive" id="submitEditButton" type="button" class="btn btn-color" (click) = submitEdit()>Submit Edit</button>
+        <button id="finishEditButton" type="button" class="btn btn-color" (click)="editFlight()">Cancel Edit</button>
     </ng-template>
 
-    <button id="deleteFlightButton" type="button" class="btn btn-dark" (click)="deleteFlight()">Delete Flight</button>
+    <button id="deleteFlightButton" type="button" class="btn btn-color" (click)="deleteFlight()">Delete Flight</button>
     <br>
-    <button *ngIf="editActive" id="submitEditButton" type="button" class="btn btn-dark" (click) = submitEdit()>Submit Edit</button>
 
-    <button id="vendorReturnButton" type="button" class="btn btn-dark" (click)="returnVendorHome()">Return Home</button>
+    <button id="vendorReturnButton" type="button" class="btn btn-color" (click)="returnVendorHome()">Return Home</button>
 </div>
 
