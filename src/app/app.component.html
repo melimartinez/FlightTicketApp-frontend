@@ -12,8 +12,9 @@
             <li routerLink = "guest">Home</li>
             <li routerLink = "register">Customer Register</li>
             <li routerLink = "vendorregister">Vendor Register</li>
-            <li routerLink = "login">Login</li>
-            <li routerLink = 'logout'>Logout</li>
+            <li routerLink = "login" *ngIf="!getCustomer() && !getVendor()">Login</li>
+            <li *ngIf="getCustomer()" routerLink = 'logout'>Logout</li>
+            <li *ngIf="getVendor()" routerLink = 'logout'>Logout</li>
         </ul>
         
         <router-outlet></router-outlet>
