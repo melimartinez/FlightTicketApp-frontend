@@ -7,9 +7,9 @@
         <!-- Email Image Can Be Placed Here -->
 
     <h1>Thank You!</h1>
-    For booking your flight with us.
-    Your submission has been received.
-    Your booking will be confirmed soon.
+    <p>We appreciate you booking your flight with us! <br>
+    Your submission has been received. <br>
+    Your booking will be confirmed soon.</p>
     </div>
 
 
@@ -19,8 +19,8 @@
         <table width="80%">
             <!--From Spaceport, Planet-->   <!--To Spaceport, Planet-->
             <tr>
-                <td><i class="fas fa-plane-departure"></i> {{flight.departureSpaceport.spName}}, {{flight.departureSpaceport.planet}}</td>
-                <td><i class="fas fa-plane-arrival"></i> {{flight.arrivalSpaceport.spName}}, {{flight.arrivalSpaceport.planet}}</td>
+                <td class="td-size"><i class="fas fa-plane-departure"></i> {{flight.departureSpaceport.spName}}, {{flight.departureSpaceport.planet}}</td>
+                <td class="td-size"><i class="fas fa-plane-arrival"></i> {{flight.arrivalSpaceport.spName}}, {{flight.arrivalSpaceport.planet}}</td>
             </tr>
         </table>
         <hr id="divider">
@@ -29,24 +29,24 @@
         <table width="80%">
             <h5>PASSENGER INFORMATION</h5>
             <tr>
-                <td><strong>Name of Traveller</strong></td>
-                <td><strong>Email</strong></td>
+                <td class="td-size-label"><strong>Name of Traveller</strong></td>
+                <td class="td-size-label"><strong>Email</strong></td>
             </tr>
             <tr>
-                <td>{{customer.firstName}} {{customer.lastName}}</td>
-                <td>{{customer.email}}</td>
+                <td class="td-size-value">{{customer.firstName}} {{customer.lastName}}</td>
+                <td class="td-size-value">{{customer.email}}</td>
             </tr>
             <tr>
-                <td><strong>Reservation ID</strong></td>
-                <td><strong>Address</strong></td>
+                <td class="td-size-label"><strong>Reservation ID</strong></td>
+                <td class="td-size-label"><strong>Address</strong></td>
 
             </tr>
             <tr>
-                <td>ZXMAR1101</td>
-                <td>{{customer.addressLine1}},
-                    <p>{{customer.city}},
+                <td class="td-size-value">ZXMAR1101</td>
+                <td class="td-size-value">{{customer.addressLine1}},<br>
+                    {{customer.city}},
                         {{customer.state}},
-                        {{customer.zipcode}}</p>
+                        {{customer.zipcode}}
                 </td>
             </tr>
         </table>
@@ -59,27 +59,28 @@
             <tr>
                 <td rowspan="4">
                     <p><strong>Flight No.</strong></p>
-                    PR 3301
+                    <p class="td-size-value2">PR 3301</p>
                     <p><strong>Class</strong></p>
-                    {{ticket.cabinClass}}
+                    <p>{{ticket.cabinClass}}</p>
 
                     <p><strong>Status</strong></p>
-                    CONFIRMED
+                    <p>CONFIRMED</p>
+                    
                 </td>
-                <td><strong>Departure</strong></td>
-                <td><strong>Departure Date</strong></td>
+                <td class="td-size-label"><strong>Departure</strong></td>
+                <td class="td-size-label"><strong>Departure Date</strong></td>
             </tr>
             <tr>
-                <td>{{flight.departureSpaceport.spName}}, {{flight.departureSpaceport.planet}}</td>
-                <td>{{flight.departureDateTime}}</td>
+                <td class="td-size-value">{{flight.departureSpaceport.spName}}, {{flight.departureSpaceport.planet}}</td>
+                <td class="td-size-value">{{flight.departureDateTime}}</td>
             </tr>
             <tr>
-                <td><strong>Arrival</strong></td>
-                <td><strong>Arrival Date</strong></td>
+                <td class="td-size-label"><strong>Arrival</strong></td>
+                <td class="td-size-label"><strong>Arrival Date</strong></td>
             </tr>
             <tr>
-                <td>{{flight.arrivalSpaceport.spName}}, {{flight.arrivalSpaceport.planet}}</td>
-                <td>{{flight.arrivalDateTime}}</td>
+                <td class="td-size-value">{{flight.arrivalSpaceport.spName}}, {{flight.arrivalSpaceport.planet}}</td>
+                <td class="td-size-value">{{flight.arrivalDateTime}}</td>
             </tr>
         </table>
         <hr id="divider">
