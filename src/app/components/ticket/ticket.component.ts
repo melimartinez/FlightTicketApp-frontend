@@ -61,6 +61,8 @@ export class TicketComponent implements OnInit {
       {id:6, name:"Low Calorie Meal"},
       {id:7, name:"Low Cholesterol Meal"}
     ]
+
+    this.mealSelected="Meals";
     
 
     this.cabinClass = [
@@ -69,6 +71,7 @@ export class TicketComponent implements OnInit {
       {id:3, name:"Business Class"},
       {id:4, name:"First Class"}
     ]
+    this.cabinSelected="Cabin Class";
    
     this.firstName = this.customer.firstName;
     this.lastName = this.customer.lastName;
