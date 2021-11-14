@@ -67,8 +67,8 @@
             <tbody id="vendorTableBody">
                 <tr *ngFor="let flight of pastFlights">
                     <td>{{flight.id}}</td>
-                    <td>{{flight.departureDateTime}}</td>
-                    <td>{{flight.arrivalDateTime}}</td>
+                    <td>{{flight.departureDateTime | date: 'MMMM d, y, h:mm a'}}</td>
+                    <td>{{flight.arrivalDateTime | date: 'MMMM d, y, h:mm a'}}</td>
                     <td>{{flight.spaceship.ssName}}</td>
                     <td>{{flight.departureSpaceport.spName}}</td>
                     <td>{{flight.arrivalSpaceport.spName}}</td>
