@@ -1,6 +1,7 @@
 <br>
 <h1>{{currentFlight.vendor.companyName}}</h1>
 <h1>Flight Number: {{currentFlight.id}}</h1>
+<h2 style="color: #bccfe7;" *ngIf="flightDeleted">Flight Number {{currentFlight.id}} Successfully Cancelled </h2>
 <!-- Departure Date field -->
 <div class="form-group row">
     <label for="departureDateTimeInput" class="col-sm-3 col-form-label">Departure Date:</label>
@@ -129,7 +130,7 @@
     <ng-template #editSpaceship>
         <!-- <label for="spaceshipInput" class="col-sm-3 col-form-label">Spaceship:</label> -->
         <select class = "col-sm-4" [(ngModel)] = 'spaceshipIndex'>
-            <option *ngFor = 'let ship of spaceshipList' value= {{spaceshipList.indexOf(ship)}} selected="selected">{{ship.ssName}}</option>
+            <option *ngFor = 'let ship of spaceshipList' value= {{spaceshipList.indexOf(ship)}}>{{ship.ssName}}</option>
         </select>
     </ng-template>
 </div>
@@ -137,6 +138,7 @@
 
 <!-- Buttons -->
 <div class="d-grid gap-2 col-2 mx-auto">
+
     <button *ngIf="!editActive; else finishEdit" id="editFlightButton" type="button" class="btn btn-dark" (click)="editFlight()">Edit Flight</button>
     <ng-template #finishEdit>
         <button id="finishEditButton" type="button" class="btn btn-dark" (click)="editFlight()">Cancel Edit</button>
