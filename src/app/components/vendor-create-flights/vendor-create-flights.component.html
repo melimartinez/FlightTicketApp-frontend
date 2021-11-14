@@ -31,24 +31,24 @@
 </div>
     <div class="form-group row">
       <label for="departureSpace" class="col-sm-3 col-form-label">Departure SpacePort</label>
-      <select class = "col-sm-4" [(ngModel)] = 'departureSpaceportIndex'>
+      <select class = "col-sm-4 form-control input-form" [(ngModel)] = 'departureSpaceportIndex'>
           <option *ngFor = 'let port of spaceportList' value= {{spaceportList.indexOf(port)}}>{{port.spName}}</option>
       </select>
     </div>
     <div class="form-group row">
         <label for="arrivalSpace" class="col-sm-3 col-form-label">Arrival SpacePort</label>
-        <select class = "col-sm-4" [(ngModel)] = 'arrivalSpaceportIndex'>
+        <select class = "col-sm-4 form-control input-form" [(ngModel)] = 'arrivalSpaceportIndex'>
             <option *ngFor = 'let port1 of spaceportList' value= {{spaceportList.indexOf(port1)}}>{{port1.spName}}</option>
         </select>
       </div>
     <div class="form-group row">
         <label for="spaceshipInput" class="col-sm-3 col-form-label">Spaceship</label>
-        <select class = "col-sm-4" [(ngModel)] = 'spaceshipIndex'>
+        <select class = "col-sm-4 form-control input-form" [(ngModel)] = 'spaceshipIndex'>
             <option *ngFor = 'let ship of spaceshipList' value= {{spaceshipList.indexOf(ship)}}>{{ship.ssName}}</option>
         </select>
       </div>
       <div class="d-grid gap-2 col-2 mx-auto">
-        <button id = "createFlightButton"type="button" class="btn btn-dark" (click) = "createFlight()">Create Flight</button>
-        <button id="vendorReturnButton" type="button" class="btn btn-dark" (click)="returnVendorHome()">Return Home</button>
+        <button id = "createFlightButton"type="button" class="btn btn-color" (click) = "createFlight()">Create Flight</button>
+        <button id="vendorReturnButton" type="button" class="btn btn-color" (click)="returnVendorHome()">Return Home</button>
     </div>
 

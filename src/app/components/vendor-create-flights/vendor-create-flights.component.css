@@ -52,7 +52,8 @@ h3 {
     color: black;
     background-color: #d1c156;
     height: 2.5em;
-    width: 6.75em;
+    width: 8.75em;
+    margin-bottom: 25px;
 }
 
 .btn-color:hover {
@@ -66,4 +67,10 @@ h3 {
 
 h1{
     color:#bccfe7
+}
+
+.input-form {
+    width: 25%;
+    height: 100%;
+    
 }
