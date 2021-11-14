@@ -1,6 +1,6 @@
 <div class="container">
-        <p style="color: white; text-align: right; font-size: 150%">Hi, Guest</p>
-        <h3 style="text-align: left; margin-left: 35px"><b>Your Number 1# site to travel the galaxy</b></h3>
+        <p style="color: #bccfe7; text-align: left; font-size: 150%; padding-top: 35px;">Hi, Guest</p>
+        <h3 style="color: #bccfe7; text-align: right; margin-left: 35px"><b>Your Number #1 site to travel the galaxy</b></h3>
         <hr>
 
     <br>
@@ -53,11 +53,11 @@
 
         <div class="card">
                 <div class="card-header">
-                    Quote
+                  <p>Quote</p>
                 </div>
                 <div class="card-body">
                     <blockquote class="blockquote mb-3">
-                    <p>I'll never use NASA booking again! I will only use <i>Spaceship Enterprises</i> </p>
+                    <p>I'll never use NASA booking again! I will only use <i>Spaceship Enterprises.</i> </p>
                     <footer class="blockquote-footer">Neil Armstrong <cite title="Source Title">Former NASA Astronaut</cite></footer>
                     </blockquote>
                 </div>
@@ -68,8 +68,8 @@
 
         <div class="card" id="message">
                 <div class="card-body" id="messagetext">
-                  <h5><b>Exciting trips coming to the Enterprises</b></h5>
-                  <p>We have a new spaceport on Venus!</p>
+                  <h5 style="font-size: 2em"><b>Exciting trips coming to the Enterprises</b></h5>
+                  <p style="font-size: 1.5em">We have a new spaceport on Venus!</p>
                 </div>
         </div>
 
@@ -80,13 +80,13 @@
         <div class="row card-group"> 
                 <div class="col-4" *ngFor="let flight of flightList" >
                    <div class="card" style="width: 18rem;">
-                       <img src="assets/enterprise.jpeg" class="card-img-top" alt="...">
-                       <div class="card-body">
-                           <h4 class="card-title">{{flight.arrivalSpaceport.planet}}</h4>
-                           <h5 class="card-title">Spaceport: {{flight.arrivalSpaceport.spName}}</h5>
+                       <img src="assets/enterprise.jpeg" class="card-img-top" style="position: relative; left: 105px;" alt="...">
+                       <div class="card-body" style="position: relative; left: 105px;">
+                           <h4 class="card-title" style="font-size: 3em; color: #bccfe7;">{{flight.arrivalSpaceport.planet}}</h4>
+                           <h5 class="card-title" style="font-size: 1.5em; color: #bccfe7;">Spaceport: {{flight.arrivalSpaceport.spName}}</h5>
 
-                           <p class="card-text">Price: {{flight.pricePerTicket | currency: 'USD'}}</p>
-                           <button href="#" class="btn btn-light" (click)="book()">Book</button>
+                           <p class="card-text" style="color: #7f8b9b;; font-size: 1.25em">Price: {{flight.pricePerTicket | currency: 'USD'}}</p>
+                           <button href="#" class="btn btn-color2" (click)="book()">Book</button>
                         </div>
                     </div>
                 </div>
@@ -117,8 +117,8 @@
             </div>
             <div class="card-body">
               <h5 class="card-title"><b>Pizza Planet</b></h5>
-              <p class="card-text">Hungry??? Serving your local star cluster.</p>
-                <p>Call mission control now for a delivery shuttle!</p>
+              <p class="card-text" style="color: #bccfe7;">Hungry??? Serving your local star cluster.</p>
+                <p style="color: #bccfe7;">Call mission control now for a delivery shuttle!</p>
               <button class="btn btn-danger">Order Now</button>
             </div>
     </div>

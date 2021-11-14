@@ -1,5 +1,13 @@
+* {
+  
+}
+
 .container {
 
+}
+
+p {
+  color: #bccfe7;
 }
 
 .card {
@@ -27,7 +35,7 @@
       color: white
   }
   #message{
-    background-color: rgb(198, 198, 198);
+    background-color: #abbbcf;
   }
   #messagetext{
     color: black;
@@ -60,6 +68,40 @@
     /* margin-left: 60px;
     margin-right: 60px; */
   }
+
+  .card-body p {
+    color: black;
+  }
+
+  .card-header p {
+    font-size: 1.5em;
+  }
+
+  .blockquote p {
+    font-size: 2.5em;
+    color: #bccfe7;
+  }
+
+  .blockquote-footer {
+    font-size: 1.75em;
+  }
+
+  .btn-color2 {
+   
+    color: black;
+    background-color: #d1c156;
+    
+}
+
+.btn-color2:hover {
+    background-color: #86c7ba;
+    border: #86c7ba;
+}
+
+.card-text{
+  color: #bccfe7;
+}
+
 
 
  
