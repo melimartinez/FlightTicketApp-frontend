@@ -2,7 +2,7 @@
 <div class="container">
     <div class="main">
     <p id="response"></p>
-    <h1 name="headingBook">Book Your Ticket</h1>
+    <h1 id="headingBook">Book Your Ticket</h1>
     <form #loginForm="ngForm" (ngSubmit)="book()">
         <table width="100%" border="3">
             <!--First Name-->
@@ -76,7 +76,7 @@
             <!--Book Ticket Button-->
             <tr>
                 <td></td>
-                <td colspan="2"><button name="bookTicket" class="btn btn-color">Book Ticket</button></td>
+                <td colspan="2"><button id="bookTicket" class="btn btn-color">Book Ticket</button></td>
             </tr>
         </table>
     </form>

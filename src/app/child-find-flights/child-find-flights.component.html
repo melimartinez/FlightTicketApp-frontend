@@ -1,7 +1,7 @@
 
 <div *ngIf="isShow">
 <p></p>
-<h3>Your Filtered Flights</h3>
+<h3 id="filtered">Your Filtered Flights</h3>
     <hr>
 
     <div class="d-grid gap-2 col-6 mx-auto container jumbotron container-color table-position">
@@ -21,7 +21,7 @@
                     <td>{{data.vendor.companyName}}</td>
                     <td>{{data.ticketsAvailable}}</td>
                     <td>{{data.pricePerTicket}}</td>  
-                    <td><button class="btn btn-color2"(click)="goToTicket(data.id)">Book</button></td> 
+                    <td><button id="book1" class="btn btn-color2"(click)="goToTicket(data.id)">Book</button></td> 
                     </tr>  
             </tbody>
         </table>
