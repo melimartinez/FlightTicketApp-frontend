@@ -61,6 +61,7 @@ export class VendorhomeComponent implements OnInit {
   // Move to view individual flight
   viewFlight(id: number) {
     console.log(id);
+    localStorage.setItem('currentFlightId', JSON.stringify(id)) // store flight id to get FLight object in next page
     this.router.navigate(['vendorflightview'])
   }
 
