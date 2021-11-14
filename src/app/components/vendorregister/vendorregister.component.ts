@@ -30,26 +30,15 @@ export class VendorregisterComponent implements OnInit {
   valid: boolean = false;
 
   submit() {
-    console.log("it works")
-    console.log(this.companyName)
-    console.log(this.vendorUsername)
-    console.log(this.vendorPassword)
-    console.log(this.vendorEmail)
-    console.log(this.vendorPhoneNumber)
-    console.log(this.slogan)
-
-
-
 
     this.vendorHttp.getAllVendors().subscribe(
       (response: any) => {
-        console.log(response)
-
         for(let r of response) {
           if(r.vendorUsername == this.vendorUsername) {
             this.showError = true;
             this.holder = this.vendorUsername;
             this.vendorUsername = "";
+            break;
           } else {
             this.valid = true;
           }
@@ -61,10 +50,8 @@ export class VendorregisterComponent implements OnInit {
     if(this.valid) {
       let v: Vendor = new Vendor(0, this.companyName, this.vendorUsername, this.vendorPassword, this.vendorEmail, this.vendorPhoneNumber, this.slogan);
       this.vendorHttp.addVendor(v).subscribe((response) => {
-      console.log (response);
-      
-
-      })   
+      }) 
+      alert("Registration successful")  
       this.router.navigate(['login']);
     }
   }

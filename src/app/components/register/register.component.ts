@@ -31,6 +31,7 @@ export class RegisterComponent implements OnInit {
 
 
   showError: boolean = false;
+  showSuccess: boolean = false;
   holder: string;
   valid: boolean = false;
 
@@ -51,6 +52,7 @@ export class RegisterComponent implements OnInit {
             this.holder = this.usernameRegistration;
             console.log(this.holder)
             this.usernameRegistration = "";
+            break;
           } else {
             console.log("Nothing happens")
             this.valid = true;
@@ -64,7 +66,8 @@ export class RegisterComponent implements OnInit {
     if(this.valid) {
       let c: Customer = new Customer(0, this.firstname, this.lastname, this.dob, this.email, this.usernameRegistration, this.passwordRegistration, this.address, this.address2, this.city, this.state, this.zipcode, this.phoneNumber);
       this.customerHttp.addCustomer(c).subscribe((response) => {
-      console.log (response);
+      this.showSuccess = true;
+      alert("Registration successful")
       this.router.navigate(['login']);
 
     })  
