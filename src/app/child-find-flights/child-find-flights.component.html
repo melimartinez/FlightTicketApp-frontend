@@ -14,8 +14,8 @@
             <tbody>
                 <tr *ngFor="let data of childData[0]">  
                     <td>{{data.id}}</td>
-                    <td>{{data.departureDateTime}}</td>
-                    <td>{{data.arrivalDateTime}}</td>
+                    <td>{{data.departureDateTime| date: 'MMMM d, y, h:mm a'}}</td>
+                    <td>{{data.arrivalDateTime | date: 'MMMM d, y, h:mm a'}}</td>
                     <td>{{data.departureSpaceport.spName}}</td>
                     <td>{{data.arrivalSpaceport.spName}}</td>
                     <td>{{data.vendor.companyName}}</td>
