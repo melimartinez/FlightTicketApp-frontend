@@ -5,7 +5,7 @@
 
 <div id="navigationContainer" class="d-grid gap-2 col-2 mx-auto">
     <button class="btn btn-color" type="button" (click)="newFlightForm()" style="margin-bottom: 10px; margin-top: 10px;">Create New Flight</button>
-    <button class="btn btn-color" type="button" (click)="toCreateDestination()" style="margin-bottom: 25px;"> Create Destination</button><br>
+    <button class="btn btn-color" type="button" (click)="toCreateDestination()" style="margin-bottom: 25px;" id="createDestinationButton"> Create Destination</button><br>
 
     <div *ngIf="showUpcomingFlights; else showUpcomingButton">
         <button class="btn btn-color" type="button" (click)="getAllPastFlights()" style="margin-bottom: 5px;">View Past Flights</button><br>

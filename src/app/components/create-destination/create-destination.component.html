@@ -19,10 +19,10 @@
 </div>
 
 <div class="d-grid gap-2 col-2 mx-auto">
-<button class="btn btn-color" type="button" (click)="createDestination()">Create Destination</button>
+<button class="btn btn-color" type="button" (click)="createDestination()" id="submitDestination">Create Destination</button>
 <button id="vendorReturnButton" type="button" class="btn btn-color" (click)="returnVendorHome()">Return Home</button>
 </div>
 
 <div class="form-group-paragraph" *ngIf="message">
-    <h3>New Destination Created!</h3>
+    <h3 id="successfulDestination">New Destination Created!</h3>
 </div>
