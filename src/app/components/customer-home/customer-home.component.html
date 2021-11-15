@@ -41,8 +41,8 @@
         <tbody>
             <tr *ngFor="let all of allFlights">  
                 <td>{{all.id}}</td>
-                <td>{{all.departureDateTime}}</td>
-                <td>{{all.arrivalDateTime}}</td>
+                <td>{{all.departureDateTime | date: 'MMMM d, y, h:mm a'}}</td>
+                <td>{{all.arrivalDateTime | date: 'MMMM d, y, h:mm a'}}</td>
                 <td>{{all.departureSpaceport.spName}}</td>
                 <td>{{all.arrivalSpaceport.spName}}</td>
                 <td>{{all.vendor.companyName}}</td>
