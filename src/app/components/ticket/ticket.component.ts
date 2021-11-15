@@ -90,7 +90,7 @@ export class TicketComponent implements OnInit {
       cabinClass: this.cabinSelected,
       checkedBag: this.checkedBag,
       carryOnBag:this.carryOnBag,
-      customer:this.customer,
+      cID:this.customer,
       flight:this.flight
     }
 
